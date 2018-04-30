@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/01/15 23:25:01.000.695,=C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/01/15 23:25:48.000.067,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unPrincipal.dfm</Transaction>
+    <Transaction>2018/01/15 23:25:48.000.067,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unPrincipal.pas</Transaction>
+    <Transaction>2018/01/15 23:26:03.000.591,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\KSLavajato.dproj</Transaction>
+    <Transaction>2018/01/15 23:26:12.000.718,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\FPADRAOMANUTENCAO.pas</Transaction>
+    <Transaction>2018/01/15 23:26:12.000.549,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\FPADRAO.pas</Transaction>
+    <Transaction>2018/01/15 23:26:13.000.198,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unDM.pas</Transaction>
+    <Transaction>2018/01/27 01:38:22.000.715,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.pas</Transaction>
+    <Transaction>2018/01/27 01:38:57.000.170,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2018/01/27 01:38:57.000.170,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.pas</Transaction>
+    <Transaction>2018/01/27 01:49:35.000.739,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.pas</Transaction>
+    <Transaction>2018/01/27 01:50:07.000.155,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadCli.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2018/01/27 01:50:07.000.155,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadCli.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit1.pas</Transaction>
+    <Transaction>2018/01/27 03:49:47.000.786,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.pas</Transaction>
+    <Transaction>2018/01/27 03:49:47.000.786,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.dfm</Transaction>
+    <Transaction>2018/01/27 03:50:27.000.332,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.pas</Transaction>
+    <Transaction>2018/01/27 03:53:57.000.716,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadSer.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadCli.dfm</Transaction>
+    <Transaction>2018/01/27 03:53:57.000.716,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadSer.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadCli.pas</Transaction>
+    <Transaction>2018/01/27 03:54:21.000.579,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadCli.pas</Transaction>
+    <Transaction>2018/01/27 04:07:59.000.711,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+    <Transaction>2018/01/27 04:08:45.000.899,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.dfm</Transaction>
+    <Transaction>2018/01/27 04:08:45.000.899,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+    <Transaction>2018/01/27 04:19:26.000.069,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.pas=</Transaction>
+    <Transaction>2018/01/28 18:43:55.000.436,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.pas</Transaction>
+    <Transaction>2018/01/28 18:43:55.000.436,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.dfm</Transaction>
+    <Transaction>2018/01/28 18:44:13.000.377,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCliente.pas</Transaction>
+    <Transaction>2018/01/28 20:43:15.000.893,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.pas</Transaction>
+    <Transaction>2018/01/28 20:43:28.000.956,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.pas=</Transaction>
+    <Transaction>2018/01/28 20:44:01.000.361,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.pas</Transaction>
+    <Transaction>2018/01/28 20:44:01.000.361,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unAutomoveis.dfm</Transaction>
+    <Transaction>2018/01/28 20:44:31.000.433,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unServico.pas</Transaction>
+    <Transaction>2018/01/31 14:57:24.000.200,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadAut.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadSer.pas</Transaction>
+    <Transaction>2018/01/31 14:57:24.000.200,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadAut.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadSer.dfm</Transaction>
+    <Transaction>2018/01/31 15:37:26.000.928,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unCadSer.pas</Transaction>
+    <Transaction>2018/01/31 17:28:06.000.773,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+    <Transaction>2018/02/01 01:15:52.000.302,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unMovimento.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.dfm</Transaction>
+    <Transaction>2018/02/01 01:15:52.000.302,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unMovimento.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+    <Transaction>2018/02/14 23:44:03.000.324,=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+    <Transaction>2018/02/14 23:44:12.000.390,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unRelatorio.dfm=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.dfm</Transaction>
+    <Transaction>2018/02/14 23:44:12.000.390,C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\unRelatorio.pas=C:\Users\Elison\Documents\GitHub\Lavajato\Fontes\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

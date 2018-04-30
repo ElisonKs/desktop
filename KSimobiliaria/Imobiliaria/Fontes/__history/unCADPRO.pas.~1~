@@ -1,0 +1,25 @@
+unit unCADPRO;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAOMANUTENCAO, Vcl.ExtCtrls,
+  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TFPADRAOMANUTENCAO_1 = class(TFPADRAOMANUTENCAO_)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPADRAOMANUTENCAO_1: TFPADRAOMANUTENCAO_1;
+
+implementation
+
+{$R *.dfm}
+
+end.

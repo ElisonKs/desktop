@@ -1,0 +1,88 @@
+unit unMovimento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TfrmMovimento = class(TForm)
+    DateTimePicker1: TDateTimePicker;
+    Edit1: TEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    DBLookupComboBox2: TDBLookupComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBLookupComboBox3: TDBLookupComboBox;
+    Label4: TLabel;
+    Image1: TImage;
+    procedure FormShow(Sender: TObject);
+    procedure DBLookupComboBox1DropDown(Sender: TObject);
+    procedure DBLookupComboBox3DropDown(Sender: TObject);
+    procedure DBLookupComboBox1Exit(Sender: TObject);
+  private
+    { Private declarations }
+    procedure carregarClientes;
+    procedure carregarServicos;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMovimento: TfrmMovimento;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+{ TForm2 }
+
+procedure TfrmMovimento.carregarClientes;
+begin
+     DM.cdsCLI.Close;
+     DM.cdsCLI.CommandText := 'select * from cliente';
+     DM.cdsCLI.Open;
+end;
+
+procedure TfrmMovimento.carregarServicos;
+begin
+     DM.cdsSER.Close;
+     DM.cdsSER.CommandText := 'select * from servico';
+     DM.cdsSER.Open;
+end;
+
+procedure TfrmMovimento.DBLookupComboBox1DropDown(Sender: TObject);
+begin
+ DM.cdsAUT.Close;
+     DM.cdsAUT.CommandText := 'select cod_aut,marca_aut||'+ quotedstr(' ')+'||modelo_aut||'+QuotedStr('-') + '||ano_aut as aut from automovel where CODCLI_AUT = ' + DM.cdsCLI.FieldByName('COD_CLI').AsString;
+     DM.cdsAUT.Open;
+end;
+
+procedure TfrmMovimento.DBLookupComboBox1Exit(Sender: TObject);
+begin
+ DM.cdsAUT.Close;
+     DM.cdsAUT.CommandText := 'select cod_aut,marca_aut||'+ quotedstr(' ')+'||modelo_aut||'+QuotedStr('-') + '||ano_aut as aut from automovel where CODCLI_AUT = ' + DM.cdsCLI.FieldByName('COD_CLI').AsString;
+     DM.cdsAUT.Open;
+end;
+
+procedure TfrmMovimento.DBLookupComboBox3DropDown(Sender: TObject);
+begin
+   Edit1.Text := FormatFloat('R$ ###,###,##0.00',DM.cdsSER.FieldByName('VALOR_SER').AsCurrency) ;
+end;
+
+procedure TfrmMovimento.FormShow(Sender: TObject);
+begin
+    carregarClientes;
+    carregarServicos;
+    DM.cdsMOVIMENTO.Close;
+    DM.cdsMOVIMENTO.Commandtext := 'select * from movimento';
+    DM.cdsMOVIMENTO.Open;
+    DM.cdsMOVIMENTO.Insert;
+end;
+
+end.

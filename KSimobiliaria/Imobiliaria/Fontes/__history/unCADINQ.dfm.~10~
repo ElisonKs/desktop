@@ -1,0 +1,360 @@
+inherited frmCADINQ: TfrmCADINQ
+  Caption = 'Cadastro - Inquilino'
+  ClientHeight = 617
+  ClientWidth = 605
+  OnCreate = FormCreate
+  ExplicitWidth = 611
+  ExplicitHeight = 646
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlBotoes: TPanel
+    Left = 484
+    Height = 567
+    ExplicitLeft = 484
+    ExplicitHeight = 567
+    inherited Panel5: TPanel
+      Height = 557
+      ExplicitHeight = 557
+    end
+    inherited Panel6: TPanel
+      Top = 557
+      ExplicitTop = 557
+    end
+    inherited Panel7: TPanel
+      Height = 557
+      ExplicitHeight = 557
+    end
+  end
+  inherited stbInformacao: TStatusBar
+    Top = 579
+    Width = 605
+    ExplicitTop = 579
+    ExplicitWidth = 605
+  end
+  inherited stbStatus: TStatusBar
+    Top = 598
+    Width = 605
+    ExplicitTop = 598
+    ExplicitWidth = 605
+  end
+  inherited Panel1: TPanel
+    Width = 605
+    ExplicitWidth = 605
+  end
+  inherited pnlPrincipal: TPanel
+    Width = 484
+    Height = 567
+    ExplicitWidth = 484
+    ExplicitHeight = 567
+    object Label1: TLabel
+      Left = 16
+      Top = 19
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+      FocusControl = DBEdit1
+    end
+    object Label2: TLabel
+      Left = 16
+      Top = 65
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+      FocusControl = DBEdit2
+    end
+    object Label3: TLabel
+      Left = 16
+      Top = 106
+      Width = 66
+      Height = 13
+      Caption = 'Nacionalidade'
+      FocusControl = DBEdit3
+    end
+    object Label4: TLabel
+      Left = 16
+      Top = 148
+      Width = 61
+      Height = 13
+      Caption = 'Naturalidade'
+      FocusControl = DBEdit4
+    end
+    object Label6: TLabel
+      Left = 135
+      Top = 237
+      Width = 44
+      Height = 13
+      Caption = 'Profiss'#227'o'
+      FocusControl = DBEdit6
+    end
+    object Label7: TLabel
+      Left = 18
+      Top = 190
+      Width = 52
+      Height = 13
+      Caption = 'Identidade'
+      FocusControl = DBEdit7
+    end
+    object Label8: TLabel
+      Left = 223
+      Top = 190
+      Width = 48
+      Height = 13
+      Caption = 'CPF/CNPJ'
+      FocusControl = DBEdit8
+    end
+    object Label9: TLabel
+      Left = 19
+      Top = 327
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+    end
+    object Label10: TLabel
+      Left = 18
+      Top = 400
+      Width = 42
+      Height = 13
+      Caption = 'Telefone'
+      FocusControl = DBEdit10
+    end
+    object Label11: TLabel
+      Left = 249
+      Top = 400
+      Width = 33
+      Height = 13
+      Caption = 'Celular'
+      FocusControl = DBEdit11
+    end
+    object Label12: TLabel
+      Left = 19
+      Top = 442
+      Width = 24
+      Height = 13
+      Caption = 'Email'
+      FocusControl = DBEdit12
+    end
+    object Label13: TLabel
+      Left = 18
+      Top = 483
+      Width = 29
+      Height = 13
+      Caption = 'Banco'
+      FocusControl = DBEdit13
+    end
+    object Label14: TLabel
+      Left = 192
+      Top = 483
+      Width = 38
+      Height = 13
+      Caption = 'Agencia'
+      FocusControl = DBEdit14
+    end
+    object Label15: TLabel
+      Left = 16
+      Top = 524
+      Width = 47
+      Height = 13
+      Caption = 'Opera'#231#227'o'
+      FocusControl = DBEdit15
+    end
+    object Label16: TLabel
+      Left = 193
+      Top = 524
+      Width = 29
+      Height = 13
+      Caption = 'Conta'
+      FocusControl = DBEdit16
+    end
+    object Label5: TLabel
+      Left = 156
+      Top = 41
+      Width = 125
+      Height = 13
+      Caption = 'Gerado automaticamente.'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clMedGray
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      Visible = False
+    end
+    object Label17: TLabel
+      Left = 156
+      Top = 190
+      Width = 30
+      Height = 13
+      Caption = 'Org'#227'o'
+      FocusControl = DBEdit5
+    end
+    object DBEdit1: TDBEdit
+      Left = 16
+      Top = 38
+      Width = 134
+      Height = 21
+      Color = clInactiveBorder
+      DataField = 'COD_INQ'
+      DataSource = DataSource1
+      ReadOnly = True
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 16
+      Top = 79
+      Width = 394
+      Height = 21
+      DataField = 'NOME_INQ'
+      DataSource = DataSource1
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 16
+      Top = 121
+      Width = 394
+      Height = 21
+      DataField = 'NACIONALIDADE_INQ'
+      DataSource = DataSource1
+      TabOrder = 2
+    end
+    object DBEdit4: TDBEdit
+      Left = 16
+      Top = 163
+      Width = 394
+      Height = 21
+      DataField = 'NATURALIDADE_INQ'
+      DataSource = DataSource1
+      TabOrder = 3
+    end
+    object DBEdit6: TDBEdit
+      Left = 135
+      Top = 253
+      Width = 266
+      Height = 21
+      DataField = 'PROFISSAO_INQ'
+      DataSource = DataSource1
+      TabOrder = 7
+    end
+    object DBEdit7: TDBEdit
+      Left = 18
+      Top = 205
+      Width = 132
+      Height = 21
+      DataField = 'RG_INQ'
+      DataSource = DataSource1
+      TabOrder = 4
+    end
+    object DBEdit8: TDBEdit
+      Left = 223
+      Top = 205
+      Width = 187
+      Height = 21
+      DataField = 'CPFCNPJ_INQ'
+      DataSource = DataSource1
+      TabOrder = 6
+    end
+    object DBEdit10: TDBEdit
+      Left = 18
+      Top = 415
+      Width = 199
+      Height = 21
+      DataField = 'TELEFONE_INQ'
+      DataSource = DataSource1
+      TabOrder = 9
+    end
+    object DBEdit11: TDBEdit
+      Left = 248
+      Top = 415
+      Width = 199
+      Height = 21
+      DataField = 'CELULAR_INQ'
+      DataSource = DataSource1
+      TabOrder = 10
+    end
+    object DBEdit12: TDBEdit
+      Left = 16
+      Top = 456
+      Width = 394
+      Height = 21
+      DataField = 'EMAIL_INQ'
+      DataSource = DataSource1
+      TabOrder = 11
+    end
+    object DBEdit13: TDBEdit
+      Left = 16
+      Top = 497
+      Width = 134
+      Height = 21
+      DataField = 'BANCO_INQ'
+      DataSource = DataSource1
+      TabOrder = 12
+    end
+    object DBEdit14: TDBEdit
+      Left = 192
+      Top = 497
+      Width = 134
+      Height = 21
+      DataField = 'AGENCIA_INQ'
+      DataSource = DataSource1
+      TabOrder = 13
+    end
+    object DBEdit15: TDBEdit
+      Left = 15
+      Top = 537
+      Width = 134
+      Height = 21
+      DataField = 'OPERACAO_INQ'
+      DataSource = DataSource1
+      TabOrder = 14
+    end
+    object DBEdit16: TDBEdit
+      Left = 192
+      Top = 537
+      Width = 134
+      Height = 21
+      DataField = 'CONTA_INQ'
+      DataSource = DataSource1
+      TabOrder = 15
+    end
+    object DBRadioGroup1: TDBRadioGroup
+      Left = 16
+      Top = 233
+      Width = 113
+      Height = 88
+      Caption = 'Estado Civil'
+      DataField = 'ESTCIVIL_INQ'
+      DataSource = DataSource1
+      Items.Strings = (
+        'Solteiro'
+        'Casado'
+        'Divorciado')
+      TabOrder = 16
+      Values.Strings = (
+        '0'
+        '1'
+        '2')
+    end
+    object DBEdit5: TDBEdit
+      Left = 156
+      Top = 205
+      Width = 61
+      Height = 21
+      DataField = 'ORGEXP_INQ'
+      DataSource = DataSource1
+      TabOrder = 5
+    end
+    object DBMemo1: TDBMemo
+      Left = 19
+      Top = 340
+      Width = 382
+      Height = 58
+      DataField = 'ENDERECO_INQ'
+      DataSource = DataSource1
+      TabOrder = 8
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.cdsINQ
+    Left = 328
+    Top = 288
+  end
+end

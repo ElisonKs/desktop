@@ -1,0 +1,125 @@
+unit unBXAALU;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Data.DB, Vcl.ComCtrls;
+
+type
+  TfrmBXAALU = class(TForm)
+    edCOD_ALU: TEdit;
+    Button1: TButton;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    edDESC_IMO: TEdit;
+    Button2: TButton;
+    Button3: TButton;
+    btCancelar: TButton;
+    dtpDATAPAG_ALU: TDateTimePicker;
+    dtpDATAREP_ALU: TDateTimePicker;
+    procedure Button1Click(Sender: TObject);
+    procedure edCOD_ALUExit(Sender: TObject);
+    procedure btCancelarClick(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+    procedure CarregarImovel;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmBXAALU: TfrmBXAALU;
+
+implementation
+
+{$R *.dfm}
+
+uses unCONSALU, unDM;
+
+procedure TfrmBXAALU.Button1Click(Sender: TObject);
+begin
+ Application.CreateForm(TfrmCONSALU,frmCONSALU);
+   frmCONSALU.ShowModal;
+   if not DM.cdsCONSULTA.IsEmpty then
+   begin
+     edCOD_ALU.Text := DM.cdsCONSULTA.FieldByName('COD_ALU').AsString;
+     edCOD_ALUExit(Self);
+   end;
+end;
+
+procedure TfrmBXAALU.Button2Click(Sender: TObject);
+begin
+    DM.cdsALU.FieldByName('DATAPAG_ALU').AsDateTime := dtpDATAPAG_ALU.DateTime;
+    DM.cdsALU.FieldByName('DATAREP_ALU').AsDateTime := dtpDATAREP_ALU.DateTime;
+    DM.cdsALU.ApplyUpdates(0);
+    btCancelarClick(Self);
+end;
+
+procedure TfrmBXAALU.Button3Click(Sender: TObject);
+begin
+   if DM.cdsALU.Active then
+       Showmessage('Salve ou cancele as alterações!')
+   else
+      Close;
+
+end;
+
+procedure TfrmBXAALU.btCancelarClick(Sender: TObject);
+begin
+    DM.cdsALU.Close;
+    edDESC_IMO.Clear;
+    edCOD_ALU.Clear;
+    dtpDATAPAG_ALU.Date := StrtoDate('01/01/0001') ;
+    dtpDATAREP_ALU.Date := StrtoDate('01/01/0001') ;
+
+end;
+
+procedure TfrmBXAALU.CarregarImovel;
+begin
+   DM.cdsCONSULTA.Close;
+   DM.cdsCONSULTA.CommandText := 'select * from imovel ' +
+                                 ' left outer join locacao on locacao.codimo_loc = imovel.cod_imo' +
+                                 ' left outer join aluguel on aluguel.codloc_alu = locacao.cod_loc';
+   DM.cdsCONSULTA.Open;
+   if not DM.cdsCONSULTA.IsEmpty then
+      edDESC_IMO.Text := DM.cdsCONSULTA.FieldByName('DESC_IMO').AsString;
+end;
+
+procedure TfrmBXAALU.edCOD_ALUExit(Sender: TObject);
+begin
+    if edCOD_ALU.Text = '' then
+     edCOD_ALU.Text := '0';
+
+ DM.cdsALU.Close;
+ DM.cdsALU.CommandText := 'select * from aluguel where cod_alu = ' + edCOD_ALU.Text;
+ DM.cdsALU.Open;
+ if DM.cdsALU.IsEmpty then
+ begin
+
+ end
+ else
+ begin
+    CarregarImovel;
+    if DM.cdsALU.FieldByName('DATAPAG_ALU').AsDateTime <> nil then
+        dtpDATAPAG_ALU.DateTime := DM.cdsALU.FieldByName('DATAPAG_ALU').AsDateTime;
+    if DM.cdsALU.FieldByName('DATAREP_ALU').AsDateTime <> nil then
+        dtpDATAREP_ALU.DateTime := DM.cdsALU.FieldByName('DATAREP_ALU').AsDateTime;
+
+    DM.cdsALU.Edit;
+
+ end;
+
+end;
+
+end.

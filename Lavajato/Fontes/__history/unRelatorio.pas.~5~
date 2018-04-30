@@ -1,0 +1,38 @@
+unit unRelatorio;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
+  ppDesignLayer, ppParameter, ppProd, ppClass, ppReport, ppComm, ppRelatv, ppDB,
+  ppDBPipe;
+
+type
+  TfrmRelatorio = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    DateTimePicker1: TDateTimePicker;
+    Button1: TButton;
+    ppDBPipeline1: TppDBPipeline;
+    ppReport1: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelatorio: TfrmRelatorio;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+end.

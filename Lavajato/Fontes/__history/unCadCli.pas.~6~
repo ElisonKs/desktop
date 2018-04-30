@@ -1,0 +1,66 @@
+unit unCadCli;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAOMANUTENCAO, Vcl.ExtCtrls,
+  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Data.DB, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TfrmCadCli = class(TFPADRAOMANUTENCAO_)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    DBEdit9: TDBEdit;
+    edtCEP: TEdit;
+    Label10: TLabel;
+    edtENDERECO: TEdit;
+    Label11: TLabel;
+    edtBAIRRO: TEdit;
+    procedure edtCEPExit(Sender: TObject);
+  private
+    { Private declarations }
+    cod_end: Integer;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadCli: TfrmCadCli;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+procedure TfrmCadCli.edtCEPExit(Sender: TObject);
+begin
+  inherited;
+     DM.cdsGravar.Close;
+     DM.cdsGRAVAR.CommandText := 'select * from endereco left outer join bairro on cod_bai = codbai_end where cep_end = ' + edtCEP.Text;
+     DM.cdsGRAVAR.Open;
+     if NOT  DM.cdsGRAVAR.IsEmpty then
+     begin
+       edtENDERECO.Text := DM.cdsGRAVAR.FieldByName('LOGRADOURO_END').AsString;
+       edtBAIRRO.Text := DM.cdsGRAVAR.FieldByName('NOME_BAI').AsString;
+       cod_end := DM.cdsGRAVAR.FieldByName('COD_END').AsInteger;
+     end;
+end;
+
+end.

@@ -1,0 +1,87 @@
+unit unCADINQ;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAOMANUTENCAO, Vcl.ExtCtrls,
+  Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons, Data.DB, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TfrmCADINQ = class(TFPADRAOMANUTENCAO_)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    DBEdit4: TDBEdit;
+    Label6: TLabel;
+    DBEdit6: TDBEdit;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    DBEdit8: TDBEdit;
+    Label9: TLabel;
+    Label10: TLabel;
+    DBEdit10: TDBEdit;
+    Label11: TLabel;
+    DBEdit11: TDBEdit;
+    Label12: TLabel;
+    DBEdit12: TDBEdit;
+    Label13: TLabel;
+    DBEdit13: TDBEdit;
+    Label14: TLabel;
+    DBEdit14: TDBEdit;
+    Label15: TLabel;
+    DBEdit15: TDBEdit;
+    Label16: TLabel;
+    DBEdit16: TDBEdit;
+    DBRadioGroup1: TDBRadioGroup;
+    Label5: TLabel;
+    DBEdit5: TDBEdit;
+    Label17: TLabel;
+    DBMemo1: TDBMemo;
+    procedure FormCreate(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCADINQ: TfrmCADINQ;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+procedure TfrmCADINQ.btnSalvarClick(Sender: TObject);
+begin
+
+if cdspadrao.State in [dsInsert] then
+   cdspadrao.FieldByName('COD_INQ').AsInteger := 0;
+   inherited;
+end;
+
+procedure TfrmCADINQ.FormCreate(Sender: TObject);
+begin
+  inherited;
+      cdspadrao := DM.cdsINQ;
+end;
+
+procedure TfrmCADINQ.FormShow(Sender: TObject);
+begin
+  if cdspadrao.State in [dsInsert] then
+     label5.Visible := True;
+  inherited;
+
+end;
+
+end.

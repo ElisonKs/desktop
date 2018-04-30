@@ -1,0 +1,242 @@
+object DM: TDM
+  OldCreateOrder = False
+  Height = 532
+  Width = 679
+  object Banco: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Elison\Documents\E\Projetos\Imobiliaria\Banco\' +
+        'IMOBILIARIA.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Protocol=TCPIP'
+      'DriverID=FB'
+      'Server=127.0.0.1')
+    LoginPrompt = False
+    Transaction = Transacao
+    Left = 48
+    Top = 40
+  end
+  object Transacao: TFDTransaction
+    Connection = Banco
+    Left = 128
+    Top = 40
+  end
+  object qryPRO: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from proprietario')
+    Left = 40
+    Top = 196
+  end
+  object dspPRO: TDataSetProvider
+    DataSet = qryPRO
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 104
+    Top = 196
+  end
+  object cdsPRO: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from proprietario'
+    Params = <>
+    ProviderName = 'dspPRO'
+    Left = 160
+    Top = 196
+  end
+  object dsPRO: TDataSource
+    DataSet = cdsPRO
+    Left = 216
+    Top = 196
+  end
+  object qryCONSULTA: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from imovel')
+    Left = 296
+    Top = 40
+  end
+  object dspCONSULTA: TDataSetProvider
+    DataSet = qryCONSULTA
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 360
+    Top = 40
+  end
+  object cdsCONSULTA: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from imovel'
+    Params = <>
+    ProviderName = 'dspCONSULTA'
+    Left = 416
+    Top = 40
+  end
+  object dsCONSULTA: TDataSource
+    DataSet = cdsCONSULTA
+    Left = 472
+    Top = 40
+  end
+  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
+    Provider = 'Forms'
+    Left = 592
+    Top = 48
+  end
+  object qryINQ: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from proprietario')
+    Left = 40
+    Top = 260
+  end
+  object dspINQ: TDataSetProvider
+    DataSet = qryINQ
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 104
+    Top = 260
+  end
+  object cdsINQ: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from inquilino'
+    Params = <>
+    ProviderName = 'dspINQ'
+    Left = 160
+    Top = 260
+  end
+  object dsINQ: TDataSource
+    DataSet = cdsINQ
+    Left = 216
+    Top = 260
+  end
+  object qryFIA: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from fiador')
+    Left = 32
+    Top = 316
+  end
+  object dspFIA: TDataSetProvider
+    DataSet = qryFIA
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 96
+    Top = 316
+  end
+  object cdsFIA: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from fiador'
+    Params = <>
+    ProviderName = 'dspFIA'
+    Left = 152
+    Top = 316
+  end
+  object dsFIA: TDataSource
+    DataSet = cdsFIA
+    Left = 208
+    Top = 316
+  end
+  object qryIMO: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from imovel')
+    Left = 32
+    Top = 372
+  end
+  object dspIMO: TDataSetProvider
+    DataSet = qryIMO
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 96
+    Top = 372
+  end
+  object cdsIMO: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from imovel'
+    Params = <>
+    ProviderName = 'dspIMO'
+    Left = 152
+    Top = 372
+  end
+  object dsIMO: TDataSource
+    DataSet = cdsIMO
+    Left = 208
+    Top = 372
+  end
+  object qryLOC: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from locacao')
+    Left = 312
+    Top = 196
+  end
+  object dspLOC: TDataSetProvider
+    DataSet = qryLOC
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 376
+    Top = 196
+  end
+  object cdsLOC: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from locacao'
+    Params = <>
+    ProviderName = 'dspLOC'
+    Left = 432
+    Top = 196
+  end
+  object dsLOC: TDataSource
+    DataSet = cdsLOC
+    Left = 488
+    Top = 196
+  end
+  object qruALU: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from aluguel')
+    Left = 312
+    Top = 244
+  end
+  object dspALU: TDataSetProvider
+    DataSet = qruALU
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 376
+    Top = 244
+  end
+  object cdsALU: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from aluguel'
+    Params = <>
+    ProviderName = 'dspALU'
+    Left = 432
+    Top = 244
+  end
+  object dsALU: TDataSource
+    DataSet = cdsALU
+    Left = 488
+    Top = 244
+  end
+  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
+    Left = 400
+    Top = 396
+  end
+  object qryGRAVAR: TFDQuery
+    Connection = Banco
+    SQL.Strings = (
+      'select * from imovel')
+    Left = 296
+    Top = 96
+  end
+  object dspGRAVAR: TDataSetProvider
+    DataSet = qryGRAVAR
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 360
+    Top = 96
+  end
+  object cdsGRAVAR: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from imovel'
+    Params = <>
+    ProviderName = 'dspGRAVAR'
+    Left = 416
+    Top = 96
+  end
+  object dsGRAVAR: TDataSource
+    DataSet = cdsGRAVAR
+    Left = 472
+    Top = 96
+  end
+end

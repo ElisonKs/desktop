@@ -1,0 +1,31 @@
+inherited frmAutomoveis: TfrmAutomoveis
+  Caption = 'Automoveis'
+  ExplicitWidth = 320
+  ExplicitHeight = 240
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlPrincipal: TPanel
+    inherited dbgdPadrao: TDBGrid
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'MARCA_AUT'
+          Title.Caption = 'Marca'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'MODELO_AUT'
+          Title.Caption = 'Modelo'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'ANO_AUT'
+          Title.Caption = 'Ano'
+          Visible = True
+        end>
+    end
+  end
+end

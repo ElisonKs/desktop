@@ -1,0 +1,49 @@
+unit unRELIMO;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ppProd, ppClass, ppReport, ppComm,
+  ppRelatv, ppDB, ppDBPipe, ppDBBDE, Vcl.StdCtrls, ppVar, ppPrnabl, ppCtrls,
+  ppBands, ppCache, ppDesignLayer, ppParameter, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    ppBDEPipeline1: TppBDEPipeline;
+    ppReport1: TppReport;
+    RadioGroup1: TRadioGroup;
+    ppReport2: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppParameterList2: TppParameterList;
+    ppDesignLayers2: TppDesignLayers;
+    ppDesignLayer2: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLabel1: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
+    ppLabel2: TppLabel;
+    ppLabel3: TppLabel;
+    ppLabel4: TppLabel;
+    ppDBText1: TppDBText;
+    ppDBText2: TppDBText;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+end.

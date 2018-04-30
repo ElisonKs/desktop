@@ -1,0 +1,65 @@
+unit unRelatorio;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls,
+  ppDesignLayer, ppParameter, ppProd, ppClass, ppReport, ppComm, ppRelatv, ppDB,
+  ppDBPipe, ppCtrls, Vcl.Imaging.pngimage, ppPrnabl, ppBands, ppCache;
+
+type
+  TfrmRelatorio = class(TForm)
+    PageControl1: TPageControl;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    DateTimePicker1: TDateTimePicker;
+    Button1: TButton;
+    ppDBPipeline1: TppDBPipeline;
+    ppReport1: TppReport;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppLine1: TppLine;
+    ppLabel1: TppLabel;
+    ppImage1: TppImage;
+    ppDBText1: TppDBText;
+    ppLabel2: TppLabel;
+    ppLabel3: TppLabel;
+    ppDBText2: TppDBText;
+    ppDBText3: TppDBText;
+    ppLabel4: TppLabel;
+    ppLabel5: TppLabel;
+    ppDBText4: TppDBText;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmRelatorio: TfrmRelatorio;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM;
+
+procedure TfrmRelatorio.Button1Click(Sender: TObject);
+begin
+  Dm.cdsCONSULTA.Close;
+  DM.cdsCONSULTA.CommandText := 'select movimento.*, marca_aut||'+ quotedstr(' ')+'||modelo_aut||'+QuotedStr('-') + '||ano_aut as aut,nome_cli,nome_ser from movimento' +
+                                ' left outer join cliente on cliente.cod_cli = movimento.codcli_mov ' +
+                                ' left outer join automovel on automovel.codcli_aut = cliente.cod_cli '+
+                                ' left outer join servico on servico.cod_ser = movimento.codser_mov ' +
+                                ' where data_mov = ' + DatetoStr(DateTimePicker1.Date);
+  DM.cdsCONSULTA.Open;
+  ppReport1.Print;
+end;
+
+end.

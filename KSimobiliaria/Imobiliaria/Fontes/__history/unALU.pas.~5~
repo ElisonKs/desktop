@@ -1,0 +1,57 @@
+unit unALU;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls;
+
+type
+  TfrmALU = class(TForm)
+    edCODLOC_ALU: TEdit;
+    Label1: TLabel;
+    Button1: TButton;
+    ProgressBar1: TProgressBar;
+    lblStatus: TLabel;
+    Button2: TButton;
+    Button3: TButton;
+    edMesInicial: TEdit;
+    Label2: TLabel;
+    edMesFinal: TEdit;
+    Label3: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure edCODLOC_ALUExit(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmALU: TfrmALU;
+
+implementation
+
+{$R *.dfm}
+
+uses unCONSLOC, unDM;
+
+procedure TfrmALU.Button1Click(Sender: TObject);
+begin
+   Application.CreateForm(TfrmCONSLOC,frmCONSLOC);
+   frmCONSLOC.ShowModal;
+   if not DM.cdsCONSULTA.IsEmpty then
+   begin
+     edCODLOC_ALU.Text := DM.cdsCONSULTA.FieldByName('COD_LOC').AsString;
+     edCODLOC_ALUExit(Self);
+   end;
+end;
+
+procedure TfrmALU.edCODLOC_ALUExit(Sender: TObject);
+begin
+    DM.cdsCONSULTA.Close;
+    DM.cdsCONSULTA.CommandText := 'select * from locacao where cod_loc= ' + edCODLOC_ALU.Text;
+    DM.cdsCONSULTA.Open;
+end;
+
+end.

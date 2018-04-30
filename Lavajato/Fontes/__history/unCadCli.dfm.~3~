@@ -1,0 +1,215 @@
+inherited frmCadCli: TfrmCadCli
+  Caption = 'CLiente - Cadastro'
+  ClientHeight = 507
+  ClientWidth = 822
+  ExplicitWidth = 828
+  ExplicitHeight = 536
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnlBotoes: TPanel
+    Left = 701
+    Height = 457
+    inherited Panel5: TPanel
+      Height = 447
+    end
+    inherited Panel6: TPanel
+      Top = 447
+    end
+    inherited Panel7: TPanel
+      Height = 447
+    end
+  end
+  inherited stbInformacao: TStatusBar
+    Top = 469
+    Width = 822
+  end
+  inherited stbStatus: TStatusBar
+    Top = 488
+    Width = 822
+  end
+  inherited Panel1: TPanel
+    Width = 822
+  end
+  inherited pnlPrincipal: TPanel
+    Width = 701
+    Height = 457
+    ExplicitLeft = 3
+    ExplicitTop = 8
+    ExplicitWidth = 701
+    ExplicitHeight = 457
+    object Label1: TLabel
+      Left = 24
+      Top = 24
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+      FocusControl = DBEdit1
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 64
+      Width = 27
+      Height = 13
+      Caption = 'Nome'
+      FocusControl = DBEdit2
+    end
+    object Label3: TLabel
+      Left = 24
+      Top = 104
+      Width = 48
+      Height = 13
+      Caption = 'CPF/CNPJ'
+      FocusControl = DBEdit3
+    end
+    object Label4: TLabel
+      Left = 24
+      Top = 147
+      Width = 19
+      Height = 13
+      Caption = 'CEP'
+    end
+    object Label5: TLabel
+      Left = 24
+      Top = 248
+      Width = 83
+      Height = 13
+      Caption = 'IDENTIDADE_CLI'
+      FocusControl = DBEdit5
+    end
+    object Label6: TLabel
+      Left = 24
+      Top = 288
+      Width = 48
+      Height = 13
+      Caption = 'NUM_END'
+      FocusControl = DBEdit6
+    end
+    object Label7: TLabel
+      Left = 24
+      Top = 328
+      Width = 55
+      Height = 13
+      Caption = 'COMP_END'
+      FocusControl = DBEdit7
+    end
+    object Label8: TLabel
+      Left = 24
+      Top = 368
+      Width = 39
+      Height = 13
+      Caption = 'TEL_CLI'
+      FocusControl = DBEdit8
+    end
+    object Label9: TLabel
+      Left = 24
+      Top = 408
+      Width = 40
+      Height = 13
+      Caption = 'CEL_CLI'
+      FocusControl = DBEdit9
+    end
+    object Label10: TLabel
+      Left = 24
+      Top = 186
+      Width = 45
+      Height = 13
+      Caption = 'Endere'#231'o'
+    end
+    object DBEdit1: TDBEdit
+      Left = 24
+      Top = 40
+      Width = 134
+      Height = 21
+      DataField = 'COD_CLI'
+      DataSource = DataSource1
+      TabOrder = 0
+    end
+    object DBEdit2: TDBEdit
+      Left = 24
+      Top = 80
+      Width = 353
+      Height = 21
+      DataField = 'NOME_CLI'
+      DataSource = DataSource1
+      TabOrder = 1
+    end
+    object DBEdit3: TDBEdit
+      Left = 24
+      Top = 120
+      Width = 264
+      Height = 21
+      DataField = 'CPFCNPJ_CLI'
+      DataSource = DataSource1
+      TabOrder = 2
+    end
+    object DBEdit5: TDBEdit
+      Left = 24
+      Top = 264
+      Width = 134
+      Height = 21
+      DataField = 'IDENTIDADE_CLI'
+      DataSource = DataSource1
+      TabOrder = 3
+    end
+    object DBEdit6: TDBEdit
+      Left = 24
+      Top = 304
+      Width = 134
+      Height = 21
+      DataField = 'NUM_END'
+      DataSource = DataSource1
+      TabOrder = 4
+    end
+    object DBEdit7: TDBEdit
+      Left = 24
+      Top = 344
+      Width = 394
+      Height = 21
+      DataField = 'COMP_END'
+      DataSource = DataSource1
+      TabOrder = 5
+    end
+    object DBEdit8: TDBEdit
+      Left = 24
+      Top = 384
+      Width = 264
+      Height = 21
+      DataField = 'TEL_CLI'
+      DataSource = DataSource1
+      TabOrder = 6
+    end
+    object DBEdit9: TDBEdit
+      Left = 24
+      Top = 424
+      Width = 264
+      Height = 21
+      DataField = 'CEL_CLI'
+      DataSource = DataSource1
+      TabOrder = 7
+    end
+    object edtCEP: TEdit
+      Left = 24
+      Top = 162
+      Width = 121
+      Height = 21
+      TabOrder = 8
+      Text = 'edtCEP'
+      OnExit = edtCEPExit
+    end
+    object edtENDERECO: TEdit
+      Left = 24
+      Top = 203
+      Width = 569
+      Height = 21
+      Color = clInactiveBorder
+      ReadOnly = True
+      TabOrder = 9
+      Text = 'edtENDERECO'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = DM.cdsCLI
+    Left = 288
+    Top = 112
+  end
+end

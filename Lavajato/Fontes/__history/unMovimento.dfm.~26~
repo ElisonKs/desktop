@@ -1,0 +1,126 @@
+object frmMovimento: TfrmMovimento
+  Left = 0
+  Top = 0
+  Caption = 'KSLavaJato - Movimento'
+  ClientHeight = 395
+  ClientWidth = 710
+  Color = clHighlightText
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poMainFormCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 200
+    Top = 101
+    Width = 33
+    Height = 13
+    Caption = 'Cliente'
+  end
+  object Label2: TLabel
+    Left = 200
+    Top = 150
+    Width = 51
+    Height = 13
+    Caption = 'Autom'#243'vel'
+  end
+  object Label3: TLabel
+    Left = 200
+    Top = 206
+    Width = 73
+    Height = 13
+    Caption = 'Tipo de Servi'#231'o'
+  end
+  object Label4: TLabel
+    Left = 464
+    Top = 206
+    Width = 24
+    Height = 13
+    Caption = 'Valor'
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 516
+    Top = 8
+    Width = 186
+    Height = 21
+    Date = 43140.676888067130000000
+    Time = 43140.676888067130000000
+    DateFormat = dfLong
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 464
+    Top = 224
+    Width = 118
+    Height = 27
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 200
+    Top = 120
+    Width = 321
+    Height = 24
+    DataField = 'CODCLI_MOV'
+    DataSource = DM.dsMOVIMENTO
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'COD_CLI'
+    ListField = 'NOME_CLI'
+    ListSource = DM.dsCLI
+    ParentFont = False
+    TabOrder = 2
+    OnDropDown = DBLookupComboBox1DropDown
+    OnExit = DBLookupComboBox1Exit
+  end
+  object DBLookupComboBox2: TDBLookupComboBox
+    Left = 200
+    Top = 168
+    Width = 233
+    Height = 24
+    DataField = 'CODAUT_MOV'
+    DataSource = DM.dsMOVIMENTO
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'COD_AUT'
+    ListField = 'Aut'
+    ListSource = DM.dsAUT
+    ParentFont = False
+    TabOrder = 3
+  end
+  object DBLookupComboBox3: TDBLookupComboBox
+    Left = 200
+    Top = 224
+    Width = 233
+    Height = 24
+    DataField = 'CODSER_MOV'
+    DataSource = DM.dsMOVIMENTO
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    KeyField = 'COD_SER'
+    ListField = 'NOME_SER'
+    ListSource = DM.dsSER
+    ParentFont = False
+    TabOrder = 4
+    OnDropDown = DBLookupComboBox3DropDown
+  end
+end

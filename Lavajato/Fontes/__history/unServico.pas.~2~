@@ -1,0 +1,62 @@
+unit unServico;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAO, Data.DB, Datasnap.DBClient,
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Buttons;
+
+type
+  TfrmServico = class(TFPADRAO_)
+    procedure FormCreate(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmServico: TfrmServico;
+
+implementation
+
+{$R *.dfm}
+
+uses unDM, unCadCli;
+
+procedure TfrmServico.btnEditarClick(Sender: TObject);
+begin
+
+ where := ' AND COD_CLI = ' + Dm.cdsCONSULTA.FieldByName('COD_CLI').AsString;
+  inherited;
+ Application.CreateForm(TfrmCADCli,frmCADCli);
+  frmCADCli.ShowModal;
+  btnPesquisarClick(Self);
+end;
+
+procedure TfrmServico.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+
+  cdspadrao.Open;
+  cdspadrao.Insert;
+  Application.CreateForm(TfrmCADCli,frmCADCli);
+  frmCADCli.ShowModal;
+    btnPesquisarClick(Self);
+end;
+
+procedure TfrmServico.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+   cdsPadrao := DM.cdsCLI;
+   cdsConsulta := DM.cdsCONSULTA;
+   tabela := 'CLIENTE';
+   campoConsulta := 'NOME_CLI';
+   campos := '*';
+end;
+
+end.

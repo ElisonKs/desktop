@@ -1,0 +1,13 @@
+inherited Form1_LgXhdpiTb: TForm1_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited Button1: TButton
+    Position.X = 384.000000000000000000
+    Position.Y = 608.000000000000000000
+  end
+  inherited Button2: TButton
+    Position.X = 104.000000000000000000
+    Position.Y = 240.000000000000000000
+  end
+end

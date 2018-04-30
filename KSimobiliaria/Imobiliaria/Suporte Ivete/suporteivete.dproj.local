@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/12/19 13:42:09.000.691,=C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/12/19 13:42:43.000.205,=C:\Users\Elison\Documents\E\Projetos\Imobiliaria\Fontes\unDM.pas</Transaction>
+    <Transaction>2016/12/19 13:42:54.000.942,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Elison\Desktop\Unit1.pas</Transaction>
+    <Transaction>2016/12/19 13:42:54.000.942,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Elison\Desktop\Unit1.dfm</Transaction>
+    <Transaction>2016/12/19 13:43:03.000.556,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Elison\Desktop\suporteivete.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
