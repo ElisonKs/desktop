@@ -1,0 +1,448 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Datasnap.DBClient,
+  Datasnap.Provider, FireDAC.Comp.DataSet, ppProd, ppClass, ppReport, ppComm,
+  ppRelatv, ppDB, ppDBPipe, Vcl.StdCtrls, Vcl.Imaging.pngimage, ppPrnabl,
+  ppCtrls, ppBands, ppCache, ppDesignLayer, ppParameter, ppStrtch, ppRegion,
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, ppTableGrid, Vcl.Imaging.jpeg;
+
+type
+  TForm1 = class(TForm)
+    FDConnection1: TFDConnection;
+    FDQuery1: TFDQuery;
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    ClientDataSet1NUMERO_CADASTRO: TIntegerField;
+    ClientDataSet1INSCRICAO: TStringField;
+    ClientDataSet1NATUREZA: TStringField;
+    ClientDataSet1PATRIMONIO: TStringField;
+    ClientDataSet1TIPCON: TStringField;
+    ClientDataSet1ESTRUTURA: TStringField;
+    ClientDataSet1AREA_TERRENO: TBCDField;
+    ClientDataSet1VALOR_TAXA_1PARC: TIntegerField;
+    ClientDataSet1VALORTERRITORIAL: TBCDField;
+    ClientDataSet1VALOR_IPTU: TBCDField;
+    ClientDataSet1AREA_UNIDADE: TBCDField;
+    ClientDataSet1VALOR_TAXA_2PARC: TIntegerField;
+    ClientDataSet1VALORPREDIAL: TBCDField;
+    ClientDataSet1VALOR_TAXA: TBCDField;
+    ClientDataSet1TAXA_EXP: TIntegerField;
+    ClientDataSet1ALIQUOTA: TIntegerField;
+    ClientDataSet1VALORVENAL: TBCDField;
+    ClientDataSet1TOTAL_DEBITO: TBCDField;
+    ClientDataSet1DATA_PROCESSAMENTO: TSQLTimeStampField;
+    ClientDataSet1SEQ: TIntegerField;
+    ClientDataSet1NOME_CONTRIBUINTE_CGM: TStringField;
+    ClientDataSet1ENDERECO_IMOVEL: TStringField;
+    ClientDataSet1NUMERO_IMOVEL: TStringField;
+    ClientDataSet1COMPLEMENTO_IMOVEL: TStringField;
+    ClientDataSet1BAIRRO_IMOVEL: TStringField;
+    ClientDataSet1CIDADE_IMOVEL: TStringField;
+    ClientDataSet1ENDERECO_CGM: TStringField;
+    ClientDataSet1NUMERO_CGM: TStringField;
+    ClientDataSet1COMPLEMENTO_CGM: TStringField;
+    ClientDataSet1BAIRRO_CGM: TStringField;
+    ClientDataSet1CIDADE_CGM: TStringField;
+    ClientDataSet1CEP_CGM: TStringField;
+    ClientDataSet1NUMPAR_COTA_UNICA: TStringField;
+    ClientDataSet1OBSERVACAO_COTAUNICA: TStringField;
+    ClientDataSet1DATA_VENCIMENTO_COTAUNICA: TSQLTimeStampField;
+    ClientDataSet1VALOR_IPTU_COTA_UNICA: TBCDField;
+    ClientDataSet1VALOR_DESCONTO_COTAUNICA: TBCDField;
+    ClientDataSet1VALOR_SUBSTOTAL: TBCDField;
+    ClientDataSet1VALOR_TAXA_COTA_UNICA: TBCDField;
+    ClientDataSet1TAXA_EXPEDIENTE_COTAUNICA: TBCDField;
+    ClientDataSet1VALOR_TOTAL_COTAUNICA: TBCDField;
+    ClientDataSet1LINHA_DIGITAVEL_COTAUNICA: TStringField;
+    ClientDataSet1CODIGO_BARRASWN_COTAUNICA: TStringField;
+    ClientDataSet1ESPACO18: TStringField;
+    ClientDataSet1VALOR_M2_TERRENO: TBCDField;
+    ClientDataSet1VALOR_M2_CONSTRUCAO: TBCDField;
+    ClientDataSet1ESPACO: TStringField;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    ppDBPipeline1: TppDBPipeline;
+    ppReport1: TppReport;
+    DataSource1: TDataSource;
+    ppParameterList1: TppParameterList;
+    ppDesignLayers1: TppDesignLayers;
+    ppDesignLayer1: TppDesignLayer;
+    ppHeaderBand1: TppHeaderBand;
+    ppDetailBand1: TppDetailBand;
+    ppFooterBand1: TppFooterBand;
+    ppImage1: TppImage;
+    ppImage2: TppImage;
+    ppImage3: TppImage;
+    ppImage4: TppImage;
+    ppRegion1: TppRegion;
+    NOME1: TppLabel;
+    endereco1: TppLabel;
+    numero1: TppLabel;
+    ppLabel1: TppLabel;
+    bairro1: TppLabel;
+    ppLabel2: TppLabel;
+    cep1: TppLabel;
+    ppLabel3: TppLabel;
+    cidade1: TppLabel;
+    ppLabel4: TppLabel;
+    comp1: TppLabel;
+    ppRegion2: TppRegion;
+    nome2: TppLabel;
+    endereco2: TppLabel;
+    numero2: TppLabel;
+    ppLabel8: TppLabel;
+    bairro2: TppLabel;
+    ppLabel10: TppLabel;
+    cep2: TppLabel;
+    ppLabel12: TppLabel;
+    cidade2: TppLabel;
+    ppLabel14: TppLabel;
+    comp2: TppLabel;
+    ppRegion3: TppRegion;
+    nome3: TppLabel;
+    endereco3: TppLabel;
+    numero3: TppLabel;
+    ppLabel19: TppLabel;
+    bairro3: TppLabel;
+    ppLabel21: TppLabel;
+    cep3: TppLabel;
+    ppLabel23: TppLabel;
+    cidade3: TppLabel;
+    ppLabel25: TppLabel;
+    comp3: TppLabel;
+    ppRegion4: TppRegion;
+    nome4: TppLabel;
+    endereco4: TppLabel;
+    numero4: TppLabel;
+    ppLabel30: TppLabel;
+    bairro4: TppLabel;
+    ppLabel32: TppLabel;
+    cep4: TppLabel;
+    ppLabel34: TppLabel;
+    cidade4: TppLabel;
+    ppLabel36: TppLabel;
+    comp4: TppLabel;
+    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
+    ppReport2: TppReport;
+    ppParameterList2: TppParameterList;
+    ppDesignLayers2: TppDesignLayers;
+    ppDesignLayer2: TppDesignLayer;
+    ppHeaderBand2: TppHeaderBand;
+    ppDetailBand2: TppDetailBand;
+    ppFooterBand2: TppFooterBand;
+    ppImage5: TppImage;
+    ppLabel5: TppLabel;
+    ppLabel6: TppLabel;
+    ppLabel7: TppLabel;
+    ppLabel9: TppLabel;
+    ppLabel11: TppLabel;
+    ppLabel13: TppLabel;
+    ppLabel15: TppLabel;
+    ppLabel16: TppLabel;
+    ppLabel17: TppLabel;
+    ppLabel18: TppLabel;
+    ppLabel20: TppLabel;
+    ppLabel22: TppLabel;
+    ppLabel24: TppLabel;
+    ppLabel26: TppLabel;
+    ppLabel27: TppLabel;
+    ppLabel28: TppLabel;
+    ppLabel29: TppLabel;
+    ppLabel31: TppLabel;
+    ppLabel33: TppLabel;
+    ppLabel35: TppLabel;
+    ppLabel37: TppLabel;
+    ppLabel38: TppLabel;
+    ppLabel39: TppLabel;
+    ppLabel40: TppLabel;
+    ppLabel41: TppLabel;
+    ppLabel42: TppLabel;
+    ppLabel43: TppLabel;
+    ppLabel44: TppLabel;
+    ppLabel45: TppLabel;
+    ppLabel46: TppLabel;
+    ppLabel47: TppLabel;
+    ppLabel48: TppLabel;
+    ppImage6: TppImage;
+    ppLabel49: TppLabel;
+    ppLabel50: TppLabel;
+    ppLabel51: TppLabel;
+    ppLabel52: TppLabel;
+    ppLabel53: TppLabel;
+    ppLabel54: TppLabel;
+    ppLabel55: TppLabel;
+    ppLabel56: TppLabel;
+    ppLabel57: TppLabel;
+    ppLabel58: TppLabel;
+    ppLabel59: TppLabel;
+    ppLabel60: TppLabel;
+    ppLabel61: TppLabel;
+    ppLabel62: TppLabel;
+    ppLabel63: TppLabel;
+    ppLabel64: TppLabel;
+    ppLabel65: TppLabel;
+    ppLabel66: TppLabel;
+    ppLabel67: TppLabel;
+    ppLabel68: TppLabel;
+    ppLabel69: TppLabel;
+    ppLabel70: TppLabel;
+    ppLabel71: TppLabel;
+    ppLabel72: TppLabel;
+    ppLabel73: TppLabel;
+    ppLabel74: TppLabel;
+    ppLabel75: TppLabel;
+    ppLabel76: TppLabel;
+    ppLabel77: TppLabel;
+    ppLabel78: TppLabel;
+    ppLabel79: TppLabel;
+    ppLabel80: TppLabel;
+    ppImage7: TppImage;
+    ppLabel81: TppLabel;
+    ppLabel82: TppLabel;
+    ppLabel83: TppLabel;
+    ppLabel84: TppLabel;
+    ppLabel85: TppLabel;
+    ppLabel86: TppLabel;
+    ppLabel87: TppLabel;
+    ppLabel88: TppLabel;
+    ppLabel89: TppLabel;
+    ppLabel90: TppLabel;
+    ppLabel91: TppLabel;
+    ppLabel92: TppLabel;
+    ppLabel93: TppLabel;
+    ppLabel94: TppLabel;
+    ppLabel95: TppLabel;
+    ppLabel96: TppLabel;
+    ppLabel97: TppLabel;
+    ppLabel98: TppLabel;
+    ppLabel99: TppLabel;
+    ppLabel100: TppLabel;
+    ppLabel101: TppLabel;
+    ppLabel102: TppLabel;
+    ppLabel103: TppLabel;
+    ppLabel104: TppLabel;
+    ppLabel105: TppLabel;
+    ppLabel106: TppLabel;
+    ppLabel107: TppLabel;
+    ppLabel108: TppLabel;
+    ppLabel109: TppLabel;
+    ppLabel110: TppLabel;
+    ppLabel111: TppLabel;
+    ppLabel112: TppLabel;
+    ppImage8: TppImage;
+    ppLabel113: TppLabel;
+    ppLabel114: TppLabel;
+    ppLabel115: TppLabel;
+    ppLabel116: TppLabel;
+    ppLabel117: TppLabel;
+    ppLabel118: TppLabel;
+    ppLabel119: TppLabel;
+    ppLabel120: TppLabel;
+    ppLabel121: TppLabel;
+    ppLabel122: TppLabel;
+    ppLabel123: TppLabel;
+    ppLabel124: TppLabel;
+    ppLabel125: TppLabel;
+    ppLabel126: TppLabel;
+    ppLabel127: TppLabel;
+    ppLabel128: TppLabel;
+    ppLabel129: TppLabel;
+    ppLabel130: TppLabel;
+    ppLabel131: TppLabel;
+    ppLabel132: TppLabel;
+    ppLabel133: TppLabel;
+    ppLabel134: TppLabel;
+    ppLabel135: TppLabel;
+    ppLabel136: TppLabel;
+    ppLabel137: TppLabel;
+    ppLabel138: TppLabel;
+    ppLabel139: TppLabel;
+    ppLabel140: TppLabel;
+    ppLabel141: TppLabel;
+    ppLabel142: TppLabel;
+    ppLabel143: TppLabel;
+    ppLabel144: TppLabel;
+    ppImage9: TppImage;
+    ppImage10: TppImage;
+    ppImage11: TppImage;
+    ppImage12: TppImage;
+    cont1: TppLabel;
+    insc1: TppLabel;
+    log1: TppLabel;
+    num1: TppLabel;
+    bai1: TppLabel;
+    com1: TppLabel;
+    cid1: TppLabel;
+    uf1: TppLabel;
+    codpos1: TppLabel;
+    areater1: TppLabel;
+    valorvenalter1: TppLabel;
+    areacons1: TppLabel;
+    valorvenalpred1: TppLabel;
+    valorventotal1: TppLabel;
+    tipoimo1: TppLabel;
+    venc1: TppLabel;
+    desc1: TppLabel;
+    valortrib1: TppLabel;
+    ppLabel145: TppLabel;
+    ppLabel146: TppLabel;
+    taxaexp1: TppLabel;
+    cont2: TppLabel;
+    insc2: TppLabel;
+    log2: TppLabel;
+    bai2: TppLabel;
+    com2: TppLabel;
+    cid2: TppLabel;
+    uf2: TppLabel;
+    codpos2: TppLabel;
+    num2: TppLabel;
+    areater2: TppLabel;
+    valorvenalter2: TppLabel;
+    areacons2: TppLabel;
+    valorvenalpred2: TppLabel;
+    valorventotal2: TppLabel;
+    tipoimo2: TppLabel;
+    venc2: TppLabel;
+    valortrib2: TppLabel;
+    desc2: TppLabel;
+    taxaexp2: TppLabel;
+    ppLabel166: TppLabel;
+    ppLabel167: TppLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure ppHeaderBand1BeforePrint(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure ppHeaderBand2BeforePrint(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+ClientDataSet1.Close;
+ClientDataSet1.CommandText := 'select * from dados_teste';
+ClientDataSet1.Open;
+ppReport1.Print;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+ClientDataSet1.Close;
+ClientDataSet1.CommandText := 'select * from dados_teste';
+ClientDataSet1.Open;
+ppReport2.Print;
+end;
+
+procedure TForm1.ppHeaderBand1BeforePrint(Sender: TObject);
+begin
+
+nome1.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+endereco1.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+numero1.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+bairro1.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+cep1.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+cidade1.Caption := ClientDataSet1.FieldByName('CIDADE_CGM').AsString;
+comp1.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_CGM').AsString;
+
+    ClientDataSet1.MoveBy(1);
+
+
+    nome2.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+endereco2.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+numero2.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+bairro2.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+cep2.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+cidade2.Caption := ClientDataSet1.FieldByName('CIDADE_CGM').AsString;
+comp2.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_CGM').AsString;
+
+    ClientDataSet1.MoveBy(1);
+
+    nome3.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+endereco3.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+numero3.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+bairro3.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+cep3.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+cidade3.Caption := ClientDataSet1.FieldByName('CIDADE_CGM').AsString;
+comp3.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_CGM').AsString;
+
+    ClientDataSet1.MoveBy(1);
+
+    nome4.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+endereco4.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+numero4.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+bairro4.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+cep4.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+cidade4.Caption := ClientDataSet1.FieldByName('CIDADE_CGM').AsString;
+comp4.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_CGM').AsString;
+
+    ClientDataSet1.MoveBy(1);
+end;
+
+procedure TForm1.ppHeaderBand2BeforePrint(Sender: TObject);
+begin
+    cont1.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+    insc1.Caption := ClientDataSet1.FieldByName('INSCRICAO').AsString;
+    log1.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+    num1.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+    bai1.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+    com1.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_IMOVEL').AsString;
+    cid1.Caption := ClientDataSet1.FieldByName('CIDADE_IMOVEL').AsString;
+    uf1.Caption := 'BA';
+    codpos1.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+    areater1.Caption := ClientDataSet1.FieldByName('VALOR_M2_TERRENO').AsString;
+    valorvenalter1.Caption := ClientDataSet1.FieldByName('VALORVENAL').AsString;
+    tipoimo1.Caption := ClientDataSet1.FieldByName('TIPCON').AsString;
+    venc1.Caption := ClientDataSet1.FieldByName('DATA_VENCIMENTO_COTAUNICA').AsString;
+    areacons1.Caption := ClientDataSet1.FieldByName('AREA_UNIDADE').AsString;
+    valorvenalpred1.Caption := ClientDataSet1.FieldByName('VALORPREDIAL').AsString;
+    valorventotal1.Caption := CurrtoStr(ClientDataSet1.FieldByName('VALORPREDIAL').AsCurrency +
+                             ClientDataSet1.FieldByName('VALORVENAL').AsCurrency);
+    desc1.Caption := ClientDataSet1.FieldByName('VALOR_DESCONTO_COTAUNICA').AsString;
+    valortrib1.Caption := ClientDataSet1.FieldByName('VALOR_IPTU').AsString;
+    taxaexp1.Caption := ClientDataSet1.FieldByName('TAXA_EXPEDIENTE_COTAUNICA').AsString;
+
+     ClientDataSet1.MoveBy(1);
+
+         cont2.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+    insc2.Caption := ClientDataSet1.FieldByName('INSCRICAO').AsString;
+    log2.Caption := ClientDataSet1.FieldByName('ENDERECO_IMOVEL').AsString;
+    num2.Caption := ClientDataSet1.FieldByName('NUMERO_IMOVEL').AsString;
+    bai2.Caption := ClientDataSet1.FieldByName('BAIRRO_IMOVEL').AsString;
+    com2.Caption := ClientDataSet1.FieldByName('COMPLEMENTO_IMOVEL').AsString;
+    cid2.Caption := ClientDataSet1.FieldByName('CIDADE_IMOVEL').AsString;
+    uf2.Caption := 'BA';
+    codpos2.Caption := ClientDataSet1.FieldByName('CEP_CGM').AsString;
+    areater2.Caption := ClientDataSet1.FieldByName('VALOR_M2_TERRENO').AsString;
+    valorvenalter2.Caption := ClientDataSet1.FieldByName('VALORVENAL').AsString;
+    tipoimo2.Caption := ClientDataSet1.FieldByName('TIPCON').AsString;
+    venc2.Caption := ClientDataSet1.FieldByName('DATA_VENCIMENTO_COTAUNICA').AsString;
+    areacons2.Caption := ClientDataSet1.FieldByName('AREA_UNIDADE').AsString;
+    valorvenalpred2.Caption := ClientDataSet1.FieldByName('VALORPREDIAL').AsString;
+    valorventotal2.Caption := CurrtoStr(ClientDataSet1.FieldByName('VALORPREDIAL').AsCurrency +
+                             ClientDataSet1.FieldByName('VALORVENAL').AsCurrency);
+    desc2.Caption := ClientDataSet1.FieldByName('VALOR_DESCONTO_COTAUNICA').AsString;
+    valortrib2.Caption := ClientDataSet1.FieldByName('VALOR_IPTU').AsString;
+    taxaexp2.Caption := ClientDataSet1.FieldByName('TAXA_EXPEDIENTE_COTAUNICA').AsString;
+
+    ClientDataSet1.MoveBy(1);
+
+end;
+
+end.
