@@ -12,7 +12,7 @@ uses
   Datasnap.Provider, FireDAC.Comp.DataSet, ppProd, ppClass, ppReport, ppComm,
   ppRelatv, ppDB, ppDBPipe, Vcl.StdCtrls, Vcl.Imaging.pngimage, ppPrnabl,
   ppCtrls, ppBands, ppCache, ppDesignLayer, ppParameter, ppStrtch, ppRegion,
-  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, ppTableGrid, Vcl.Imaging.jpeg;
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, ppTableGrid, Vcl.Imaging.jpeg, ppBarCod;
 
 type
   TForm1 = class(TForm)
@@ -359,10 +359,148 @@ type
     taxaexp4: TppLabel;
     ppLabel170: TppLabel;
     ppLabel171: TppLabel;
+    ppReport3: TppReport;
+    ppParameterList3: TppParameterList;
+    ppDesignLayers3: TppDesignLayers;
+    ppDesignLayer3: TppDesignLayer;
+    ppHeaderBand3: TppHeaderBand;
+    ppDetailBand3: TppDetailBand;
+    ppFooterBand3: TppFooterBand;
+    ppImage14: TppImage;
+    ppImage13: TppImage;
+    ppImage15: TppImage;
+    ppImage16: TppImage;
+    ppLabel147: TppLabel;
+    ppLabel148: TppLabel;
+    ppLabel149: TppLabel;
+    ppLabel150: TppLabel;
+    ppLabel151: TppLabel;
+    ppLabel152: TppLabel;
+    ppLabel153: TppLabel;
+    ppLabel154: TppLabel;
+    ppLabel155: TppLabel;
+    ppLabel156: TppLabel;
+    ppLabel157: TppLabel;
+    ppLabel158: TppLabel;
+    ppLabel161: TppLabel;
+    ppLabel162: TppLabel;
+    ppLabel163: TppLabel;
+    ppLabel164: TppLabel;
+    ppLabel165: TppLabel;
+    ppLabel168: TppLabel;
+    ppLabel169: TppLabel;
+    ppLabel172: TppLabel;
+    ppLabel173: TppLabel;
+    ppLabel174: TppLabel;
+    ppLabel175: TppLabel;
+    ppLabel176: TppLabel;
+    ppLabel177: TppLabel;
+    ppLabel178: TppLabel;
+    ppLabel179: TppLabel;
+    ppLabel180: TppLabel;
+    ppLabel181: TppLabel;
+    ppLabel182: TppLabel;
+    ppLabel183: TppLabel;
+    ppLabel184: TppLabel;
+    ppLabel185: TppLabel;
+    ppLabel186: TppLabel;
+    ppLabel187: TppLabel;
+    ppLabel188: TppLabel;
+    ppLabel189: TppLabel;
+    ppLabel190: TppLabel;
+    ppLabel191: TppLabel;
+    ppLabel192: TppLabel;
+    ppLabel193: TppLabel;
+    ppLabel194: TppLabel;
+    ppLabel195: TppLabel;
+    ppLabel196: TppLabel;
+    ppLabel197: TppLabel;
+    ppLabel198: TppLabel;
+    ppLabel199: TppLabel;
+    ppLabel200: TppLabel;
+    ppLabel201: TppLabel;
+    ppLabel202: TppLabel;
+    ppLabel203: TppLabel;
+    ppLabel204: TppLabel;
+    ppLabel205: TppLabel;
+    ppLabel206: TppLabel;
+    ppLabel207: TppLabel;
+    ppLabel208: TppLabel;
+    ppLabel209: TppLabel;
+    ppLabel210: TppLabel;
+    ppLabel211: TppLabel;
+    ppLabel212: TppLabel;
+    ppLabel213: TppLabel;
+    ppLabel214: TppLabel;
+    ppLabel215: TppLabel;
+    ppLabel216: TppLabel;
+    ppLabel217: TppLabel;
+    ppLabel218: TppLabel;
+    ppLabel219: TppLabel;
+    ppLabel220: TppLabel;
+    ppLabel221: TppLabel;
+    ppLabel222: TppLabel;
+    ppLabel223: TppLabel;
+    ppLabel224: TppLabel;
+    ppLabel225: TppLabel;
+    ppLabel226: TppLabel;
+    ppLabel227: TppLabel;
+    ppLabel228: TppLabel;
+    ppLabel229: TppLabel;
+    ppLabel230: TppLabel;
+    ppLabel231: TppLabel;
+    ppLabel232: TppLabel;
+    ppLabel233: TppLabel;
+    ppLabel234: TppLabel;
+    ppLabel235: TppLabel;
+    ppLabel236: TppLabel;
+    ppLabel237: TppLabel;
+    ppLabel238: TppLabel;
+    ppLabel239: TppLabel;
+    ppLabel240: TppLabel;
+    ppLabel241: TppLabel;
+    ppLabel242: TppLabel;
+    ppLabel243: TppLabel;
+    ppLabel244: TppLabel;
+    ppLabel245: TppLabel;
+    ppLabel246: TppLabel;
+    ppLabel247: TppLabel;
+    ppLabel248: TppLabel;
+    ppLabel249: TppLabel;
+    ppLabel250: TppLabel;
+    ppLabel251: TppLabel;
+    ppLabel252: TppLabel;
+    ppLabel253: TppLabel;
+    ppLabel254: TppLabel;
+    ppLabel255: TppLabel;
+    ppLabel256: TppLabel;
+    ppLabel257: TppLabel;
+    ppLabel258: TppLabel;
+    ppLabel259: TppLabel;
+    ppLabel260: TppLabel;
+    ppLabel261: TppLabel;
+    ppLabel262: TppLabel;
+    ppLabel263: TppLabel;
+    ppLabel264: TppLabel;
+    ppLabel265: TppLabel;
+    ppLabel266: TppLabel;
+    ppLabel267: TppLabel;
+    ppLabel268: TppLabel;
+    ppLabel269: TppLabel;
+    ppLabel270: TppLabel;
+    ppLabel271: TppLabel;
+    ppLabel272: TppLabel;
+    ppBarCode1: TppBarCode;
+    ppBarCode2: TppBarCode;
+    ppBarCode3: TppBarCode;
+    ppBarCode4: TppBarCode;
+    contribuinte1: TppLabel;
     procedure Button1Click(Sender: TObject);
     procedure ppHeaderBand1BeforePrint(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure ppHeaderBand2BeforePrint(Sender: TObject);
+    procedure ppHeaderBand3BeforePrint(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -390,6 +528,14 @@ ClientDataSet1.Close;
 ClientDataSet1.CommandText := 'select * from dados_teste';
 ClientDataSet1.Open;
 ppReport2.Print;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+     ClientDataSet1.Close;
+ClientDataSet1.CommandText := 'select * from dados_teste';
+ClientDataSet1.Open;
+ppReport3.Print;
 end;
 
 procedure TForm1.ppHeaderBand1BeforePrint(Sender: TObject);
@@ -531,6 +677,26 @@ begin
     taxaexp4.Caption := ClientDataSet1.FieldByName('TAXA_EXPEDIENTE_COTAUNICA').AsString;
 
     ClientDataSet1.MoveBy(1);
+
+end;
+
+procedure TForm1.ppHeaderBand3BeforePrint(Sender: TObject);
+begin
+
+contribuinte1.Caption := ClientDataSet1.FieldByName('NOME_CONTRIBUINTE_CGM').AsString;
+ ppBarCode1.Data := ClientDataSet1.FieldByName('LINHA_DIGITAVEL_COTAUNICA').AsString;
+ ClientDataSet1.MoveBy(1);
+
+ ppBarCode2.Data := ClientDataSet1.FieldByName('LINHA_DIGITAVEL_COTAUNICA').AsString;
+ ClientDataSet1.MoveBy(1);
+
+ ppBarCode3.Data := ClientDataSet1.FieldByName('LINHA_DIGITAVEL_COTAUNICA').AsString;
+ ClientDataSet1.MoveBy(1);
+
+ ppBarCode4.Data := ClientDataSet1.FieldByName('LINHA_DIGITAVEL_COTAUNICA').AsString;
+ ClientDataSet1.MoveBy(1);
+
+
 
 end;
 
