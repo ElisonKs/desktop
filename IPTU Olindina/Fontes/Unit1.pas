@@ -12,7 +12,8 @@ uses
   Datasnap.Provider, FireDAC.Comp.DataSet, ppProd, ppClass, ppReport, ppComm,
   ppRelatv, ppDB, ppDBPipe, Vcl.StdCtrls, Vcl.Imaging.pngimage, ppPrnabl,
   ppCtrls, ppBands, ppCache, ppDesignLayer, ppParameter, ppStrtch, ppRegion,
-  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, ppTableGrid, Vcl.Imaging.jpeg, ppBarCod;
+  FireDAC.VCLUI.Wait, FireDAC.Comp.UI, ppTableGrid, Vcl.Imaging.jpeg, ppBarCod,
+  ppVar;
 
 type
   TForm1 = class(TForm)
@@ -32,10 +33,6 @@ type
     ppHeaderBand1: TppHeaderBand;
     ppDetailBand1: TppDetailBand;
     ppFooterBand1: TppFooterBand;
-    ppImage1: TppImage;
-    ppImage2: TppImage;
-    ppImage3: TppImage;
-    ppImage4: TppImage;
     ppRegion1: TppRegion;
     NOME1: TppLabel;
     endereco1: TppLabel;
@@ -535,6 +532,9 @@ type
     lblCodigo2: TppLabel;
     lblCodigo3: TppLabel;
     lblCodigo4: TppLabel;
+    ppSystemVariable1: TppSystemVariable;
+    ppSystemVariable2: TppSystemVariable;
+    ppSystemVariable3: TppSystemVariable;
     procedure Button1Click(Sender: TObject);
     procedure ppHeaderBand1BeforePrint(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -557,7 +557,7 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 begin
 ClientDataSet1.Close;
-ClientDataSet1.CommandText := 'select * from dados_reais order by numero_cadastro';
+ClientDataSet1.CommandText := 'select * from dados_reais order by nome_contribuinte_cgm';
 ClientDataSet1.Open;
 ppReport1.Print;
 end;
@@ -565,7 +565,7 @@ end;
 procedure TForm1.Button2Click(Sender: TObject);
 begin
 ClientDataSet1.Close;
-ClientDataSet1.CommandText := 'select * from dados_reais order by numero_cadastro';
+ClientDataSet1.CommandText := 'select * from dados_reais order by nome_contribuinte_cgm ';
 ClientDataSet1.Open;
 ppReport2.Print;
 end;
@@ -573,7 +573,7 @@ end;
 procedure TForm1.Button3Click(Sender: TObject);
 begin
      ClientDataSet1.Close;
-ClientDataSet1.CommandText := 'select * from dados_reais order by numero_cadastro';
+ClientDataSet1.CommandText := 'select * from dados_reais order by nome_contribuinte_cgm ';
 ClientDataSet1.Open;
 ppReport3.Print;
 end;
