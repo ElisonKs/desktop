@@ -1949,18 +1949,15 @@ object Principal: TPrincipal
       Caption = 'Clientes'
       object Novo1: TMenuItem
         Caption = 'Cadastro'
-        OnClick = Novo1Click
       end
     end
     object Cardpio1: TMenuItem
       Caption = 'Card'#225'pio'
       object Categorias1: TMenuItem
         Caption = 'Categorias'
-        OnClick = Categorias1Click
       end
       object Produtos1: TMenuItem
         Caption = 'Itens'
-        OnClick = Produtos1Click
       end
     end
     object Estoque1: TMenuItem
@@ -1987,18 +1984,15 @@ object Principal: TPrincipal
       Caption = 'Venda'
       object Almoo1: TMenuItem
         Caption = 'Almo'#231'o'
-        OnClick = Almoo1Click
       end
       object Jantar1: TMenuItem
         Caption = 'Jantar'
-        OnClick = Jantar1Click
       end
     end
     object Relatrios1: TMenuItem
       Caption = 'Relat'#243'rios'
       object VendasporPerodo1: TMenuItem
         Caption = 'Vendas por Per'#237'odo'
-        OnClick = VendasporPerodo1Click
       end
     end
     object Sair1: TMenuItem

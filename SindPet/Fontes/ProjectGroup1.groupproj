@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{284C68E7-4A36-4B9F-A8E4-5061EB4A2B6F}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SindPet.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SindPet">
+        <MSBuild Projects="SindPet.dproj"/>
+    </Target>
+    <Target Name="SindPet:Clean">
+        <MSBuild Projects="SindPet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SindPet:Make">
+        <MSBuild Projects="SindPet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SindPet"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SindPet:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SindPet:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/07/18 14:24:55.000.962,=C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/07/18 14:25:32.000.645,C:\Users\Elison\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\GitHub\desktop\SindPet\Fontes\SindPet.dproj</Transaction>
+    <Transaction>2018/07/18 14:26:50.000.458,=E:\GitHub\desktop\SindPet\Fontes\unSenha.pas</Transaction>
+    <Transaction>2018/07/18 14:26:50.000.536,=E:\GitHub\desktop\SindPet\Fontes\uPrincipal.pas</Transaction>
+    <Transaction>2018/07/18 14:26:50.000.393,=E:\GitHub\desktop\SindPet\Fontes\uDM.pas</Transaction>
+    <Transaction>2018/07/18 14:26:50.000.233,=E:\GitHub\desktop\SindPet\Fontes\uCONSUSU.pas</Transaction>
+  </Transactions>
+</BorlandProject>
