@@ -9,6 +9,9 @@ uses
 
 type
   TPrincipal = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
     procedure Sair1Click(Sender: TObject);
   private
     { Private declarations }
