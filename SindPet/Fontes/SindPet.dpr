@@ -7,7 +7,11 @@ uses
   uCONSUSU in 'uCONSUSU.pas' {CONSUSU},
   uDM in 'uDM.pas' {DM: TDataModule},
   unSenha in 'unSenha.pas' {Form1},
-  uPrincipal in 'uPrincipal.pas' {Principal};
+  uPrincipal in 'uPrincipal.pas' {Principal},
+  FPADRAO in 'FPADRAO.pas' {FPADRAO_},
+  FPADRAOMANUTENCAO in 'FPADRAOMANUTENCAO.pas' {FPADRAOMANUTENCAO_},
+  unCONSASS in 'unCONSASS.pas' {frmCONASS},
+  unCADASS in 'unCADASS.pas' {frmCADASS};
 
 {$R *.res}
 
@@ -19,6 +23,5 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TCONSUSU, CONSUSU);
   Application.CreateForm(TDM, DM);
-  Application.CreateForm(TPrincipal, Principal);
   Application.Run;
 end.

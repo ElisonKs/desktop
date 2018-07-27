@@ -1,0 +1,5 @@
+inherited frmCONASS: TfrmCONASS
+  Caption = 'frmCONASS'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

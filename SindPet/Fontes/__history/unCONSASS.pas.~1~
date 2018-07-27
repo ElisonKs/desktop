@@ -1,0 +1,25 @@
+unit unCONSASS;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAO, Data.DB, Datasnap.DBClient,
+  Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Buttons;
+
+type
+  TFPADRAO_1 = class(TFPADRAO_)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FPADRAO_1: TFPADRAO_1;
+
+implementation
+
+{$R *.dfm}
+
+end.

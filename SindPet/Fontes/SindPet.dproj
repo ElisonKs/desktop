@@ -102,6 +102,22 @@
             <Form>Principal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="FPADRAO.pas">
+            <Form>FPADRAO_</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="FPADRAOMANUTENCAO.pas">
+            <Form>FPADRAOMANUTENCAO_</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unCONSASS.pas">
+            <Form>frmCONASS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unCADASS.pas">
+            <Form>frmCADASS</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
