@@ -10,6 +10,8 @@ uses
   uPrincipal in 'uPrincipal.pas' {Principal},
   FPADRAO in 'FPADRAO.pas' {FPADRAO_},
   FPADRAOMANUTENCAO in 'FPADRAOMANUTENCAO.pas' {FPADRAOMANUTENCAO_},
+  unCONSMED in 'unCONSMED.pas' {frmCONSMED},
+  unCADMED in 'unCADMED.pas' {frmCADMED},
   unCONSASS in 'unCONSASS.pas' {frmCONASS},
   unCADASS in 'unCADASS.pas' {frmCADASS};
 

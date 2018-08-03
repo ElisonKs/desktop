@@ -20,6 +20,8 @@ type
     procedure Sair1Click(Sender: TObject);
     procedure Image1MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
+    procedure Image3MouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -33,7 +35,7 @@ implementation
 
 {$R *.dfm}
 
-uses unCONSASS;
+uses unCONSASS, unCONSMED;
 
 
 
@@ -42,6 +44,14 @@ procedure TPrincipal.Image1MouseDown(Sender: TObject; Button: TMouseButton;
 begin
    Application.CreateForm(TfrmCONASS,frmCONASS);
    frmCONASS.ShowModal;
+end;
+
+procedure TPrincipal.Image3MouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+begin
+Application.CreateForm(TfrmCONSMED,frmCONSMED);
+   frmCONSMED.ShowModal;
+
 end;
 
 procedure TPrincipal.Sair1Click(Sender: TObject);

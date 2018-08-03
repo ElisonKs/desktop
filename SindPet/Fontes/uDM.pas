@@ -41,6 +41,10 @@ type
     cdsASSENDERECO_ASS: TStringField;
     cdsASSTELEFONE_ASS: TStringField;
     cdsASSCEL_ASS: TStringField;
+    qryMED: TFDQuery;
+    dspMED: TDataSetProvider;
+    cdsMED: TClientDataSet;
+    dsMED: TDataSource;
   private
     { Private declarations }
   public
