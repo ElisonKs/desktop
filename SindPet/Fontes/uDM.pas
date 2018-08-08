@@ -45,6 +45,10 @@ type
     dspMED: TDataSetProvider;
     cdsMED: TClientDataSet;
     dsMED: TDataSource;
+    qryCON: TFDQuery;
+    dspCON: TDataSetProvider;
+    cdsCON: TClientDataSet;
+    dsCON: TDataSource;
   private
     { Private declarations }
   public

@@ -118,6 +118,14 @@
             <Form>frmCADMED</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="unCONSCON.pas">
+            <Form>frmCONCON</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="unCADCON.pas">
+            <Form>frmCADCON</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="unCONSASS.pas">
             <Form>frmCONASS</Form>
             <FormType>dfm</FormType>

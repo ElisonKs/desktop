@@ -4,11 +4,12 @@ object DM: TDM
   Width = 777
   object Banco: TFDConnection
     Params.Strings = (
-      'Database=E:\GitHub\desktop\SindPet\Banco\SINDPET.FDB'
+      
+        'Database=C:\Users\Elison\Documents\GitHub\desktop\SindPet\Banco\' +
+        'SINDPET.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'DriverID=FB')
-    Connected = True
     LoginPrompt = False
     Transaction = Transacao
     Left = 40
@@ -196,5 +197,32 @@ object DM: TDM
     DataSet = cdsMED
     Left = 208
     Top = 224
+  end
+  object qryCON: TFDQuery
+    Connection = Banco
+    Transaction = Transacao
+    SQL.Strings = (
+      'select * from medico')
+    Left = 48
+    Top = 272
+  end
+  object dspCON: TDataSetProvider
+    DataSet = qryCON
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 112
+    Top = 272
+  end
+  object cdsCON: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from consulta'
+    Params = <>
+    ProviderName = 'dspCON'
+    Left = 168
+    Top = 272
+  end
+  object dsCON: TDataSource
+    DataSet = cdsCON
+    Left = 216
+    Top = 280
   end
 end

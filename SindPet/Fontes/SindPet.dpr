@@ -12,6 +12,8 @@ uses
   FPADRAOMANUTENCAO in 'FPADRAOMANUTENCAO.pas' {FPADRAOMANUTENCAO_},
   unCONSMED in 'unCONSMED.pas' {frmCONSMED},
   unCADMED in 'unCADMED.pas' {frmCADMED},
+  unCONSCON in 'unCONSCON.pas' {frmCONCON},
+  unCADCON in 'unCADCON.pas' {frmCADCON},
   unCONSASS in 'unCONSASS.pas' {frmCONASS},
   unCADASS in 'unCADASS.pas' {frmCADASS};
 
