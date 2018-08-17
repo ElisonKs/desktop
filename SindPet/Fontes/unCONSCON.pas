@@ -32,6 +32,10 @@ begin
    where := ' AND ID_CON = ' + Dm.cdsCONSULTA.FieldByName('ID_CON').AsString;
   inherited;
  Application.CreateForm(TfrmCADCON,frmCADCON);
+ frmCADCON.edAssociado.Text := DM.cdsCONSULTA.FieldByName('IDASS_CON').AsString;
+ frmCADCON.edMedico.Text := DM.cdsCONSULTA.FieldByName('IDMED_CON').AsString;
+ frmCADCON.edHora.Text := DM.cdsCONSULTA.FieldByName('HORA_CON').AsString;
+ frmCADCON.DateTimePicker1.DateTime := DM.cdsCONSULTA.FieldByName('DATA_CON').AsDateTime;
   frmCADCON.ShowModal;
   btnPesquisarClick(Self);
 

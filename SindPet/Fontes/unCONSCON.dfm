@@ -1,5 +1,7 @@
 inherited frmCONCON: TfrmCONCON
   Caption = 'Consultas'
+  ExplicitWidth = 639
+  ExplicitHeight = 308
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlBotoes: TPanel
