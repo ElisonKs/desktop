@@ -49,6 +49,10 @@ type
     dspCON: TDataSetProvider;
     cdsCON: TClientDataSet;
     dsCON: TDataSource;
+    qryRELATORIO: TFDQuery;
+    dspRELATORIO: TDataSetProvider;
+    cdsRELATORIO: TClientDataSet;
+    dsRELATORIO: TDataSource;
   private
     { Private declarations }
   public

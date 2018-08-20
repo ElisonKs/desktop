@@ -25,22 +25,22 @@ object DM: TDM
     Transaction = Transacao
     SQL.Strings = (
       'select * from associado')
-    Left = 40
-    Top = 160
+    Left = 32
+    Top = 232
   end
   object dspASS: TDataSetProvider
     DataSet = qryASS
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 104
-    Top = 160
+    Left = 96
+    Top = 232
   end
   object cdsASS: TClientDataSet
     Aggregates = <>
     CommandText = 'select * from associado'
     Params = <>
     ProviderName = 'dspASS'
-    Left = 160
-    Top = 160
+    Left = 152
+    Top = 232
     object cdsASSID_ASS: TIntegerField
       FieldName = 'ID_ASS'
       Required = True
@@ -66,8 +66,8 @@ object DM: TDM
   end
   object dsASS: TDataSource
     DataSet = cdsASS
-    Left = 208
-    Top = 168
+    Left = 200
+    Top = 240
   end
   object qryCONSULTA: TFDQuery
     Connection = Banco
@@ -124,8 +124,8 @@ object DM: TDM
   object qryGRID: TFDQuery
     Connection = Banco
     Transaction = Transacao
-    Left = 256
-    Top = 128
+    Left = 272
+    Top = 136
   end
   object dspGRID: TDataSetProvider
     DataSet = qryGRID
@@ -149,80 +149,107 @@ object DM: TDM
   object qryUSU: TFDQuery
     Connection = Banco
     Transaction = Transacao
-    Left = 360
-    Top = 192
+    Left = 384
+    Top = 256
   end
   object dspUSU: TDataSetProvider
     DataSet = qryUSU
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 424
-    Top = 192
+    Left = 448
+    Top = 256
   end
   object cdsUSU: TClientDataSet
     Aggregates = <>
     CommandText = 'select * from usuario'
     Params = <>
     ProviderName = 'dspUSU'
-    Left = 480
-    Top = 192
+    Left = 504
+    Top = 256
   end
   object dsUSU: TDataSource
     DataSet = cdsUSU
-    Left = 528
-    Top = 200
+    Left = 552
+    Top = 264
   end
   object qryMED: TFDQuery
     Connection = Banco
     Transaction = Transacao
     SQL.Strings = (
       'select * from medico')
-    Left = 40
-    Top = 216
+    Left = 32
+    Top = 288
   end
   object dspMED: TDataSetProvider
     DataSet = qryMED
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 104
-    Top = 216
+    Left = 96
+    Top = 288
   end
   object cdsMED: TClientDataSet
     Aggregates = <>
     CommandText = 'select * from medico'
     Params = <>
     ProviderName = 'dspMED'
-    Left = 160
-    Top = 216
+    Left = 152
+    Top = 288
   end
   object dsMED: TDataSource
     DataSet = cdsMED
-    Left = 208
-    Top = 224
+    Left = 200
+    Top = 296
   end
   object qryCON: TFDQuery
     Connection = Banco
     Transaction = Transacao
     SQL.Strings = (
       'select * from medico')
-    Left = 48
-    Top = 272
+    Left = 40
+    Top = 344
   end
   object dspCON: TDataSetProvider
     DataSet = qryCON
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 112
-    Top = 272
+    Left = 104
+    Top = 344
   end
   object cdsCON: TClientDataSet
     Aggregates = <>
     CommandText = 'select * from consulta'
     Params = <>
     ProviderName = 'dspCON'
-    Left = 168
-    Top = 272
+    Left = 160
+    Top = 344
   end
   object dsCON: TDataSource
     DataSet = cdsCON
-    Left = 216
-    Top = 280
+    Left = 208
+    Top = 352
+  end
+  object qryRELATORIO: TFDQuery
+    Connection = Banco
+    Transaction = Transacao
+    SQL.Strings = (
+      'select * from usuario')
+    Left = 272
+    Top = 192
+  end
+  object dspRELATORIO: TDataSetProvider
+    DataSet = qryRELATORIO
+    Options = [poAllowCommandText, poUseQuoteChar]
+    Left = 328
+    Top = 184
+  end
+  object cdsRELATORIO: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from usuario'
+    Params = <>
+    ProviderName = 'dspRELATORIO'
+    Left = 400
+    Top = 184
+  end
+  object dsRELATORIO: TDataSource
+    DataSet = cdsRELATORIO
+    Left = 472
+    Top = 184
   end
 end
