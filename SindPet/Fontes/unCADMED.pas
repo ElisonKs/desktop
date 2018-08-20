@@ -16,6 +16,7 @@ type
     Label4: TLabel;
     DBMemo1: TDBMemo;
     Label7: TLabel;
+    DBRadioGroup1: TDBRadioGroup;
     procedure btnSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);

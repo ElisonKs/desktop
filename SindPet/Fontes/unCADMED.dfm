@@ -1,40 +1,38 @@
 inherited frmCADMED: TfrmCADMED
   Caption = 'Cadastro de M'#233'dico'
-  ClientHeight = 250
+  ClientHeight = 306
   OnCreate = FormCreate
   ExplicitWidth = 603
-  ExplicitHeight = 279
+  ExplicitHeight = 335
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlBotoes: TPanel
-    Height = 200
-    ExplicitHeight = 281
+    Height = 256
+    ExplicitHeight = 200
     inherited Panel5: TPanel
-      Height = 190
-      ExplicitHeight = 271
+      Height = 246
+      ExplicitHeight = 190
     end
     inherited Panel6: TPanel
-      Top = 190
-      ExplicitTop = 271
+      Top = 246
+      ExplicitTop = 190
     end
     inherited Panel7: TPanel
-      Height = 190
-      ExplicitHeight = 271
+      Height = 246
+      ExplicitHeight = 190
     end
   end
   inherited stbInformacao: TStatusBar
-    Top = 212
-    ExplicitTop = 293
+    Top = 268
+    ExplicitTop = 212
   end
   inherited stbStatus: TStatusBar
-    Top = 231
-    ExplicitTop = 312
+    Top = 287
+    ExplicitTop = 231
   end
   inherited pnlPrincipal: TPanel
-    Height = 200
-    ExplicitLeft = 48
-    ExplicitTop = 92
-    ExplicitHeight = 240
+    Height = 256
+    ExplicitHeight = 200
     object Label1: TLabel
       Left = 14
       Top = 8
@@ -100,6 +98,25 @@ inherited frmCADMED: TfrmCADMED
       DataField = 'ENDERECO_MED'
       DataSource = DM.dsMED
       TabOrder = 2
+    end
+    object DBRadioGroup1: TDBRadioGroup
+      Left = 32
+      Top = 195
+      Width = 416
+      Height = 55
+      Caption = 'Especialidade'
+      Columns = 3
+      DataField = 'TIPO_MED'
+      DataSource = DM.dsMED
+      Items.Strings = (
+        'Odontologista'
+        'Ginecologista'
+        'Dermatologista')
+      TabOrder = 3
+      Values.Strings = (
+        '1'
+        '2'
+        '3')
     end
   end
 end

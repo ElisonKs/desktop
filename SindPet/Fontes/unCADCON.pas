@@ -42,11 +42,43 @@ type
     ppDBText5: TppDBText;
     ppDBText6: TppDBText;
     ppDBText7: TppDBText;
+    ppReport2: TppReport;
+    ppHeaderBand2: TppHeaderBand;
+    ppDetailBand2: TppDetailBand;
+    ppImage2: TppImage;
+    ppDBText8: TppDBText;
+    ppDBText9: TppDBText;
+    ppDBText10: TppDBText;
+    ppDBText11: TppDBText;
+    ppDBText12: TppDBText;
+    ppDBText13: TppDBText;
+    ppDBText14: TppDBText;
+    ppFooterBand2: TppFooterBand;
+    ppDesignLayers2: TppDesignLayers;
+    ppDesignLayer2: TppDesignLayer;
+    ppParameterList2: TppParameterList;
+    ppReport3: TppReport;
+    ppHeaderBand3: TppHeaderBand;
+    ppDetailBand3: TppDetailBand;
+    ppImage3: TppImage;
+    ppDBText15: TppDBText;
+    ppDBText16: TppDBText;
+    ppDBText17: TppDBText;
+    ppDBText18: TppDBText;
+    ppDBText19: TppDBText;
+    ppDBText20: TppDBText;
+    ppDBText21: TppDBText;
+    ppFooterBand3: TppFooterBand;
+    ppDesignLayers3: TppDesignLayers;
+    ppDesignLayer3: TppDesignLayer;
+    ppParameterList3: TppParameterList;
     procedure btnSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure edAssociadoExit(Sender: TObject);
     procedure edMedicoExit(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -60,7 +92,7 @@ implementation
 
 {$R *.dfm}
 
-uses uDM;
+uses uDM, unCONSASS, unCONSMED;
 
 procedure TfrmCADCON.btnSalvarClick(Sender: TObject);
 begin
@@ -84,9 +116,32 @@ if cdspadrao.State in [dsInsert] then
                                       ' left outer join MEDICO on MEDICO.id_med = CONSULTA.idmed_con ' +
                                       ' where CONSULTA.ID_CON = ' + DBEdit1.Text;
        DM.cdsRELATORIO.Open;
-       ppReport1.Print;
+       case DM.cdsRELATORIO.FieldByName('TIPO_MED').AsInteger of
+             1: ppReport1.Print;
+             2: ppReport2.Print;
+             3: ppReport3.Print;
+       end;
+
      end;
 
+end;
+
+procedure TfrmCADCON.Button2Click(Sender: TObject);
+begin
+  inherited;
+       Application.CreateForm(TfrmCONSMED,frmCONSMED);
+         frmCONSMED.ShowModal;
+         edMedico.Text := DM.cdsConsulta.FieldByName('ID_MED').AsString;
+         edMedicoExit(Self);
+end;
+
+procedure TfrmCADCON.Button1Click(Sender: TObject);
+begin
+  inherited;
+       Application.CreateForm(TfrmCONASS,frmCONASS);
+         frmCONASS.ShowModal;
+         edAssociado.Text := DM.cdsConsulta.FieldByName('ID_ASS').AsString;
+         edAssociadoExit(Self);
 end;
 
 procedure TfrmCADCON.edAssociadoExit(Sender: TObject);
