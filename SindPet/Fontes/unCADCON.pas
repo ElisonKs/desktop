@@ -95,6 +95,8 @@ implementation
 uses uDM, unCONSASS, unCONSMED;
 
 procedure TfrmCADCON.btnSalvarClick(Sender: TObject);
+var
+complemento :String;
 begin
 
 DM.cdsTRAVAR.Close;
@@ -102,7 +104,7 @@ DM.cdsTRAVAR.CommandText := 'select * from consulta where idass_con = ' +
                             edAssociado.Text + ' and extract(month from data_con) = ' +
                             IntToStr(MonthOf(DateTimePicker1.Date));
 DM.cdsTRAVAR.Open;
-if DM.cdsTRAVAR.RecordCount > 1 then
+if (DM.cdsTRAVAR.RecordCount > 1) and (cdspadrao.State in [dsInsert]) then
    showmessage('Este associado já marcou 2 consultas no referido mês!')
 else
 begin
@@ -110,7 +112,12 @@ begin
 
 
     if cdspadrao.State in [dsInsert] then
+    begin
        cdspadrao.FieldByName('ID_CON').AsInteger := 0;
+        complemento :=  ' order by ID_CON DESC rows 1 ';
+    end
+    else
+       complemento := ' where ID_CON = ' + DBEdit1.Text;
 
        cdspadrao.FieldByName('IDASS_CON').AsString := edAssociado.Text;
        cdspadrao.FieldByName('IDMED_CON').AsString := edMedico.Text;
@@ -125,8 +132,8 @@ begin
            DM.cdsRELATORIO.Close;
            DM.cdsRELATORIO.CommandText := 'select * from CONSULTA ' +
                                           ' left outer join ASSOCIADO on ASSOCIADO.id_ass = CONSULTA.idass_con ' +
-                                          ' left outer join MEDICO on MEDICO.id_med = CONSULTA.idmed_con ' +
-                                          ' where CONSULTA.ID_CON = ' + DBEdit1.Text;
+                                          ' left outer join MEDICO on MEDICO.id_med = CONSULTA.idmed_con ' + complemento;
+
            DM.cdsRELATORIO.Open;
            case DM.cdsRELATORIO.FieldByName('TIPO_MED').AsInteger of
                  1: ppReport1.Print;

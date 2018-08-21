@@ -21,10 +21,12 @@ type
     Label6: TLabel;
     DBEdit6: TDBEdit;
     DBMemo1: TDBMemo;
+    Label8: TLabel;
+    DBEdit4: TDBEdit;
+    DateTimePicker1: TDateTimePicker;
     Label7: TLabel;
     procedure btnSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +47,7 @@ begin
 
 if cdspadrao.State in [dsInsert] then
    cdspadrao.FieldByName('ID_ASS').AsInteger := 0;
+   cdspadrao.FieldByName('DATANASC_ASS').AsDateTime := DateTimePicker1.DateTime;
    inherited;
 end;
 
@@ -52,15 +55,6 @@ procedure TfrmCADASS.FormCreate(Sender: TObject);
 begin
     inherited;
       cdspadrao := DM.cdsASS;
-
-end;
-
-procedure TfrmCADASS.FormShow(Sender: TObject);
-begin
- if cdspadrao.State in [dsInsert] then
-     Label7.Visible := True;
-
-  inherited;
 
 end;
 

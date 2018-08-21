@@ -54,13 +54,13 @@ end;
 
 procedure TfrmCONCON.btnNovoClick(Sender: TObject);
 begin
-  inherited;
+
 
   cdspadrao.Open;
   cdspadrao.Insert;
   Application.CreateForm(TfrmCADCON,frmCADCON);
   frmCADCON.ShowModal;
-    btnPesquisarClick(Self);
+     inherited;
 end;
 
 procedure TfrmCONCON.FormCreate(Sender: TObject);

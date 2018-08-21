@@ -53,6 +53,8 @@ type
     dspRELATORIO: TDataSetProvider;
     cdsRELATORIO: TClientDataSet;
     dsRELATORIO: TDataSource;
+    cdsASSFAZENDA_ASS: TStringField;
+    cdsASSDATANASC_ASS: TDateField;
   private
     { Private declarations }
   public

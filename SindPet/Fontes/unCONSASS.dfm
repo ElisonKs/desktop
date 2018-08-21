@@ -1,5 +1,7 @@
 inherited frmCONASS: TfrmCONASS
   Caption = 'Associados'
+  ExplicitWidth = 639
+  ExplicitHeight = 308
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlBotoes: TPanel

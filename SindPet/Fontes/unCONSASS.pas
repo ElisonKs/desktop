@@ -43,6 +43,7 @@ begin
    where := ' AND ID_ASS = ' + Dm.cdsCONSULTA.FieldByName('ID_ASS').AsString;
   inherited;
  Application.CreateForm(TfrmCADASS,frmCADASS);
+ frmCADASS.DateTimePicker1.DateTime := cdsPadrao.FieldByName('DATANASC_ASS').AsDateTime;
   frmCADASS.ShowModal;
   btnPesquisarClick(Self);
 

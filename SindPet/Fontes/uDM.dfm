@@ -8,6 +8,7 @@ object DM: TDM
       'User_Name=sysdba'
       'Password=masterkey'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Transaction = Transacao
     Left = 40
@@ -60,6 +61,13 @@ object DM: TDM
     end
     object cdsASSCEL_ASS: TStringField
       FieldName = 'CEL_ASS'
+    end
+    object cdsASSFAZENDA_ASS: TStringField
+      FieldName = 'FAZENDA_ASS'
+      Size = 100
+    end
+    object cdsASSDATANASC_ASS: TDateField
+      FieldName = 'DATANASC_ASS'
     end
   end
   object dsASS: TDataSource

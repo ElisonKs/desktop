@@ -1,34 +1,46 @@
 inherited frmCADASS: TfrmCADASS
   Caption = 'Cadastro de Associado'
-  ClientHeight = 331
+  ClientHeight = 359
   OnCreate = FormCreate
   ExplicitWidth = 603
-  ExplicitHeight = 360
+  ExplicitHeight = 388
   PixelsPerInch = 96
   TextHeight = 13
+  object Label8: TLabel [0]
+    Left = 14
+    Top = 279
+    Width = 41
+    Height = 13
+    Caption = 'Fazenda'
+    FocusControl = DBEdit4
+  end
   inherited pnlBotoes: TPanel
-    Height = 281
+    Height = 309
+    ExplicitHeight = 326
     inherited Panel5: TPanel
-      Height = 271
+      Height = 299
+      ExplicitHeight = 316
     end
     inherited Panel6: TPanel
-      Top = 271
+      Top = 299
+      ExplicitTop = 316
     end
     inherited Panel7: TPanel
-      Height = 271
+      Height = 299
+      ExplicitHeight = 316
     end
   end
   inherited stbInformacao: TStatusBar
-    Top = 293
+    Top = 321
+    ExplicitTop = 338
   end
   inherited stbStatus: TStatusBar
-    Top = 312
+    Top = 340
+    ExplicitTop = 357
   end
   inherited pnlPrincipal: TPanel
-    Height = 281
-    ExplicitLeft = 56
-    ExplicitTop = 18
-    ExplicitHeight = 376
+    Height = 309
+    ExplicitHeight = 326
     object Label1: TLabel
       Left = 14
       Top = 8
@@ -77,19 +89,11 @@ inherited frmCADASS: TfrmCADASS
       FocusControl = DBEdit6
     end
     object Label7: TLabel
-      Left = 156
-      Top = 26
-      Width = 121
+      Left = 232
+      Top = 48
+      Width = 96
       Height = 13
-      Caption = 'Gerado automaticamente'
-      Color = clBtnShadow
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = cl3DDkShadow
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      ParentColor = False
-      ParentFont = False
+      Caption = 'Data de Nascimento'
     end
     object DBEdit1: TDBEdit
       Left = 14
@@ -120,7 +124,7 @@ inherited frmCADASS: TfrmCADASS
       TabOrder = 2
     end
     object DBEdit5: TDBEdit
-      Left = 14
+      Left = 12
       Top = 239
       Width = 171
       Height = 21
@@ -146,5 +150,23 @@ inherited frmCADASS: TfrmCADASS
       DataSource = DM.dsASS
       TabOrder = 5
     end
+    object DateTimePicker1: TDateTimePicker
+      Left = 232
+      Top = 63
+      Width = 186
+      Height = 21
+      Date = 43333.449259884260000000
+      Time = 43333.449259884260000000
+      TabOrder = 6
+    end
+  end
+  object DBEdit4: TDBEdit [6]
+    Left = 12
+    Top = 294
+    Width = 357
+    Height = 21
+    DataField = 'FAZENDA_ASS'
+    DataSource = DM.dsASS
+    TabOrder = 5
   end
 end
