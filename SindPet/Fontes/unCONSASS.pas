@@ -12,6 +12,7 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnApagarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,16 @@ implementation
 {$R *.dfm}
 
 uses uDM, unCADASS;
+
+procedure TfrmCONASS.btnApagarClick(Sender: TObject);
+begin
+ DM.cdsASS.Close;
+ DM.cdsASS.CommandText := 'select * from associado where id_ass = ' + DM.cdsCONSULTA.FieldByName('ID_ASS').AsString;
+ DM.cdsASS.Open;
+  inherited;
+
+
+end;
 
 procedure TfrmCONASS.btnEditarClick(Sender: TObject);
 begin

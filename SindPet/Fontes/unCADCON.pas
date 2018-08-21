@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FPADRAOMANUTENCAO, Vcl.ExtCtrls,
   Vcl.ComCtrls, Vcl.StdCtrls, Vcl.Buttons,Data.DB, Vcl.DBCtrls, Vcl.Mask,
   ppCtrls, Vcl.Imaging.pngimage, ppPrnabl, ppClass, ppBands, ppCache,
-  ppDesignLayer, ppParameter, ppProd, ppReport, ppComm, ppRelatv, ppDB, ppDBPipe;
+  ppDesignLayer, ppParameter, ppProd, ppReport, ppComm, ppRelatv, ppDB, ppDBPipe,System.DateUtils;
 
 type
   TfrmCADCON = class(TFPADRAOMANUTENCAO_)
@@ -97,32 +97,45 @@ uses uDM, unCONSASS, unCONSMED;
 procedure TfrmCADCON.btnSalvarClick(Sender: TObject);
 begin
 
-if cdspadrao.State in [dsInsert] then
-   cdspadrao.FieldByName('ID_CON').AsInteger := 0;
+DM.cdsTRAVAR.Close;
+DM.cdsTRAVAR.CommandText := 'select * from consulta where idass_con = ' +
+                            edAssociado.Text + ' and extract(month from data_con) = ' +
+                            IntToStr(MonthOf(DateTimePicker1.Date));
+DM.cdsTRAVAR.Open;
+if DM.cdsTRAVAR.RecordCount > 1 then
+   showmessage('Este associado já marcou 2 consultas no referido mês!')
+else
+begin
 
-   cdspadrao.FieldByName('IDASS_CON').AsString := edAssociado.Text;
-   cdspadrao.FieldByName('IDMED_CON').AsString := edMedico.Text;
-   cdspadrao.FieldByName('HORA_CON').AsString := edHora.Text;
-   cdspadrao.FieldByName('DATA_CON').AsDateTime := DateTimePicker1.DateTime;
 
-   inherited;
 
-   If  MessageDlg('Deseja imprimir a ficha?',mtConfirmation,[mbyes,mbno],0)=mryes
-  then
-     begin
-       DM.cdsRELATORIO.Close;
-       DM.cdsRELATORIO.CommandText := 'select * from CONSULTA ' +
-                                      ' left outer join ASSOCIADO on ASSOCIADO.id_ass = CONSULTA.idass_con ' +
-                                      ' left outer join MEDICO on MEDICO.id_med = CONSULTA.idmed_con ' +
-                                      ' where CONSULTA.ID_CON = ' + DBEdit1.Text;
-       DM.cdsRELATORIO.Open;
-       case DM.cdsRELATORIO.FieldByName('TIPO_MED').AsInteger of
-             1: ppReport1.Print;
-             2: ppReport2.Print;
-             3: ppReport3.Print;
-       end;
+    if cdspadrao.State in [dsInsert] then
+       cdspadrao.FieldByName('ID_CON').AsInteger := 0;
 
-     end;
+       cdspadrao.FieldByName('IDASS_CON').AsString := edAssociado.Text;
+       cdspadrao.FieldByName('IDMED_CON').AsString := edMedico.Text;
+       cdspadrao.FieldByName('HORA_CON').AsString := edHora.Text;
+       cdspadrao.FieldByName('DATA_CON').AsDateTime := DateTimePicker1.DateTime;
+
+       inherited;
+
+       If  MessageDlg('Deseja imprimir a ficha?',mtConfirmation,[mbyes,mbno],0)=mryes
+      then
+         begin
+           DM.cdsRELATORIO.Close;
+           DM.cdsRELATORIO.CommandText := 'select * from CONSULTA ' +
+                                          ' left outer join ASSOCIADO on ASSOCIADO.id_ass = CONSULTA.idass_con ' +
+                                          ' left outer join MEDICO on MEDICO.id_med = CONSULTA.idmed_con ' +
+                                          ' where CONSULTA.ID_CON = ' + DBEdit1.Text;
+           DM.cdsRELATORIO.Open;
+           case DM.cdsRELATORIO.FieldByName('TIPO_MED').AsInteger of
+                 1: ppReport1.Print;
+                 2: ppReport2.Print;
+                 3: ppReport3.Print;
+           end;
+
+         end;
+end;
 
 end;
 

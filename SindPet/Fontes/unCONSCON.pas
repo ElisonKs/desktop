@@ -12,6 +12,7 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnApagarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,16 @@ implementation
 {$R *.dfm}
 
 uses uDM, unCADCON;
+
+procedure TfrmCONCON.btnApagarClick(Sender: TObject);
+begin
+ cdsPadrao.Close;
+ cdsPadrao.CommandText := 'select * from consulta where id_con = ' + DM.cdsCONSULTA.FieldByName('ID_CON').AsString;
+ cdsPadrao.Open;
+
+  inherited;
+
+end;
 
 procedure TfrmCONCON.btnEditarClick(Sender: TObject);
 begin

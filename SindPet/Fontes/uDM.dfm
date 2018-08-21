@@ -4,9 +4,7 @@ object DM: TDM
   Width = 777
   object Banco: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Elison\Documents\GitHub\desktop\SindPet\Banco\' +
-        'SINDPET.FDB'
+      'Database=C:\STTAR\Banco\SINDPET.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'DriverID=FB')

@@ -12,6 +12,7 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure btnApagarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,6 +27,15 @@ implementation
 {$R *.dfm}
 
 uses uDM, unCADASS, unCADMED;
+
+procedure TfrmCONSMED.btnApagarClick(Sender: TObject);
+begin
+ cdsPadrao.Close;
+ cdsPadrao.CommandText := 'select * from medico where id_med = ' + DM.cdsCONSULTA.FieldByName('ID_MED').AsString;
+ cdsPadrao.Open;
+  inherited;
+
+end;
 
 procedure TfrmCONSMED.btnEditarClick(Sender: TObject);
 begin

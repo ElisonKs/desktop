@@ -1,5 +1,7 @@
 inherited frmCONSMED: TfrmCONSMED
   Caption = 'M'#233'dicos'
+  ExplicitWidth = 639
+  ExplicitHeight = 308
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlBotoes: TPanel

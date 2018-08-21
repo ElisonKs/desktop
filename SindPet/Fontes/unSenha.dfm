@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Sindicato dos Trabalhadores de Petrolina'
   ClientHeight = 141
-  ClientWidth = 394
+  ClientWidth = 320
   Color = clHighlightText
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -787,7 +787,7 @@ object Form1: TForm1
   object edNOME_USU: TEdit
     Left = 128
     Top = 24
-    Width = 242
+    Width = 185
     Height = 21
     Color = clInactiveBorder
     ReadOnly = True
